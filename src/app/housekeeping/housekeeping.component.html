@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<!-- <html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body> -->
+
+  <!---change room status-->
+
+<div class="modal fade" id="change" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#0077B5;color:white;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Quick Change Room Status</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+           <div class="col-lg-1">
+            <input type="radio" name="optradio" (click)="sample('roomlist')"  style="height:20px;width:20px;">
+           </div>
+           <div class="col-lg-3">
+
+            <b>Room List</b>
+           </div>
+
+           <div class="col-lg-6">
+             <input type="text" [(ngModel)]="changeroomlist"></div>
+
+          </div><br>
+
+          <div class="row">
+
+            <div class="col-lg-1">
+                <input type="radio" name="optradio" (click)="sample('fromtoroom')" style="height:20px;width:20px;">
+            </div>
+
+            <div class="col-lg-3">
+             <b>From Room</b>
+            </div>
+           <div class="col-lg-2">
+              <select  required style="height:34px;width:100%;color:black;border-radius:4px;">
+                  <option value = "101">101</option>
+                  <option value = "102">102</option>
+                  <option value = "103">103</option>
+                  </select>
+           </div>
+
+
+           <div class="col-lg-2">
+              <b>To Room</b>
+             </div>
+            <div class="col-lg-2">
+               <select  required style="height:34px;width:100%;color:black;border-radius:4px;">
+                   <option value = "101">101</option>
+                   <option value = "102">102</option>
+                   <option value = "103">103</option>
+                   </select>
+            </div>
+
+          </div><br>
+
+          <div class="row">
+
+              <div class="col-lg-1">
+                  <input type="radio" name="optradio" style="height:20px;width:20px;">
+              </div>
+  
+              <div class="col-lg-3">
+               <b>Section</b>
+              </div>
+             <div class="col-lg-2">
+                <select  required style="height:34px;width:150%;color:black;border-radius:4px;">
+                    <option value = "AM Section">AM Section</option>
+                    <option value = "102">102</option>
+                    <option value = "103">103</option>
+                    </select>
+             </div>
+  <div class="col-lg-1"></div>
+  
+             <div class="col-lg-2">
+                <b>Section</b>
+               </div>
+              <div class="col-lg-2">
+                 <select  required style="height:34px;width:150%;color:black;border-radius:4px;">
+                     <option value = "AM Section">AM Section</option>
+                     <option value = "102">102</option>
+                     <option value = "103">103</option>
+                     </select>
+              </div>
+  
+            </div><br>
+
+
+            <div class="row">
+                <div class="col-lg-1">
+                 <input type="radio" name="optradio" style="height:20px;width:20px;">
+                </div>
+                <div class="col-lg-3">
+     
+                 <b>Change Room Status</b>
+                </div>
+     
+                <div class="col-lg-6">
+                   <select  required style="height:34px;width:100%;color:black;border-radius:4px;">
+                       <option value = "Clean">Clean</option>
+                       <option value = "Dirty">Dirty</option>
+                       <option value = "Inspected">Inspected</option>
+                       <option value = "Pick Up">Pick Up</option>
+                       <option value = "Out Of Order">Out Of Order</option>
+                       <option value = "Out Of Service">Out Of Service</option>
+                       </select>
+                </div>
+     
+               </div>
+         
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="housekeepingstatus()"><b>OK</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<div class="container" style="padding-top:50px;">
+  <div class="jumbotron jumbotron-fluid" style="padding-top:20px;background-color:#0077B5;color:white;">
+    <div class="row">
+    <b>Room Status</b>
+    </div>
+   <div class="row">
+   
+   <div class="col-lg-4">
+            <input type="checkbox" style="width:20px;height:20px;">
+     <b>Clean</b>
+    </div>
+
+
+
+   <div class="col-lg-4">
+    <input type="checkbox" style="width:20px;height:20px;">
+        <b>Dirty</b>
+        </div>
+
+
+
+    <div class="col-lg-4">
+       <input type="checkbox" style="width:20px;height:20px;">
+         <b>Out Of Order</b>
+      </div>
+
+
+</div>
+
+<div class="row">
+   
+   <div class="col-lg-4">
+    <input type="checkbox" style="width:20px;height:20px;">
+       <b>Pick Up</b>
+ </div>
+
+
+   <div class="col-lg-4">
+    <input type="checkbox" style="width:20px;height:20px;">
+        <b>Inspected</b>
+         </div>
+
+
+
+    <div class="col-lg-4">
+    <input type="checkbox" style="width:20px;height:20px;">
+       <b>Out Of Service</b>
+  </div>
+
+
+</div><br>
+
+<div class="row">
+    <b>FO Status</b>
+    </div>
+   <div class="row">
+   
+   <div class="col-lg-4">
+  <input type="checkbox" style="width:20px;height:20px;">
+  <b>Clean</b>
+      </div>
+
+
+ <div class="col-lg-4">
+  <input type="checkbox" style="width:20px;height:20px;">
+  <b>Clean</b>
+      </div>
+
+   
+</div><br>
+
+
+<div class="row">
+
+    <div class="col-lg-3"></div>
+    <div class="col-lg-2"><b>From Room</b></div>
+    <div class="col-lg-3">
+      <select  required style="height:34px;width:200px;color:black;">
+          <option value = "101">101</option>
+          <option value = "102">102</option>
+          <option value = "103">103</option>
+          </select>
+        </div>
+  
+  </div><br>
+
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-2">
+     <button type="button" class="btn btn-warning" style="width:100%;"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+ </div>
+
+    <div class="col-lg-2">
+
+        <button type="button" class="btn btn-info" style="width:100%;"><b>Advanced</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+    </div>
+
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-success" style="width:100%;"><b>Select All</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+    </div>
+
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-danger" style="width:100%;"><b>Clear All</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+    </div>
+
+    <div class="col-lg-2"></div>
+
+  </div>
+  
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+<div class="container">
+  
+    <table class="table table-bordered table-responsive table-hover">
+      <thead style="background-color:#0077B5;color:white;">
+        <tr>
+          <th>X</th>
+          <th>Room</th>
+          <th>Room Type</th>
+          <th>Room Status</th>
+          <th>FO status</th>
+          <th>Reservation Status</th>
+          <th>Floor</th>
+          <th>Room Class</th>
+          <th>AM/PM</th>
+          <th>Features</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>101</td>
+          <td>SDBN</td>
+         <td  class="select" style="background-color:#5cb85c;color:white;">
+                  <select style="width:135px;height:20px;border-radius:4px;background-color:#5cb85c;color:black;">        
+                      <option value="Inspected" style="color:white;"><b >Inspected</b></option>
+                      <option value="Dirty">Dirty</option>
+                      <option value="Clean">Clean</option>
+                      <option value="Pick up">Pick up</option>
+                      <option value="Out of Order">Out of Order</option>
+                      <option value="Out of Service">Out of Service</option>
+              </select></td>
+      
+        
+          <td>OCC</td>
+          <td>Not Reserved</td>
+          <td>Low Floor</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>102</td>
+            <td>SJSN</td>
+            <td style="background-color:#d9534f;color:white;"><b>Dirty</b></td>
+              <td>OCC</td>
+            <td>Not Reserved</td>
+            <td>Low Floor</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>103</td>
+            <td>KSBN</td>
+            <td style="background-color:#5bc0de;color:white;"><b>Pick Up</b></td>
+            <td>VAC</td>
+            <td>Arrival</td>
+            <td>Low Floor</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>104</td>
+            <td>KSBS</td>
+            <td style="background-color:#d9534f;color:white;"><b>Out of Order</b></td>
+            <td>VAC</td>
+            <td>Due Out</td>
+            <td>Low Floor</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox"></td>
+           <td>105</td>
+           <td>KNGN</td>
+            <td style="background-color:#d9534f;color:white;"><b>Out of Service</b></td>
+            <td>OCC</td>
+            <td>Not Reserved</td>
+            <td>Low Floor</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>106</td>
+            <td>KSGS</td>
+            <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+            <td>VAC</td>
+            <td>Stay Over</td>
+            <td>Low Floor</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+  <div class="row">
+<div class="col-lg-2">
+<button type="button" class="btn btn-info" style="width:100%;"><b>Resv.</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+</div>
+
+<div class="col-lg-2">
+    <button type="button" class="btn btn-info" style="width:100%;"><b>Details</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+    </div>
+
+<div class="col-lg-2">
+    <button type="button" class="btn btn-warning" style="width:100%;"><b>Report</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+  </div>
+
+  <div class="col-lg-2">
+      <button type="button" class="btn btn-primary" style="width:100%;"><b>Statistics</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+    </div>
+
+
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-success" style="width:100%;" data-toggle="modal" data-target="#change"><b>Change</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+      </div>
+
+      <div class="col-lg-2">
+          <button type="button" class="btn btn-danger" style="width:100%;"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+        </div>
+  </div>
+</div>
+<!-- </body>
+</html> -->
+
+

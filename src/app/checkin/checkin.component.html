@@ -1,0 +1,422 @@
+<div class="row" style="width:99%">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+      <br>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-color: #0077B5;color: white; ">
+    <div class="row">
+
+        <div class="col-sm-4">
+           <b> First Name</b> <div class="input-group">
+                <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" id="name" class="form-control" [(ngModel)]="queryString"></div>
+        </div>
+  
+        <div class="col-sm-4">
+  
+            <b>Last Name</b> <div class="input-group">
+                <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" id="name" class="form-control"></div>
+        </div>
+        
+          <div class="col-sm-4">
+              <b>Company</b> <div class="input-group">
+                <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" id="name" class="form-control"></div>
+  
+            </div>
+      
+  
+          </div>
+  
+          <div class="row" style="padding-top:10px;">
+  
+              <div class="col-lg-4">
+                  <b>Contact</b> <div class="input-group">
+                       <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-phone"></i></span>
+                       <input type="text" class="form-control"></div>
+               </div>
+  
+        <div class="col-lg-4">
+            <b>Arrival From</b> <div class="input-group">
+                 <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                 <input type="date" class="form-control"></div>
+         </div>
+   
+         <div class="col-lg-4">
+   
+             <b>Arrival To</b> <div class="input-group">
+                 <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                 <input type="date" class="form-control"></div>
+         </div>
+        
+  
+      
+  
+          </div>
+  
+  
+          <div class="row" style="padding-top:10px;">
+  
+            <div class="col-lg-4">
+              <b>Group</b> <div class="input-group">
+                   <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+                   <input type="text" id="name" class="form-control"></div>
+           </div>
+           
+        
+              <div class="col-lg-4">
+        
+                  <b>Source</b> <div class="input-group">
+                      <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+                      <input type="text" id="name" class="form-control"></div>
+              </div>
+            
+              <div class="col-lg-4">
+                    <b>Agent</b> <div class="input-group">
+                      <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+                      <input type="text" id="name" class="form-control"></div>
+        
+                  </div>
+            </div>  
+
+<br>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-2">
+  <button class="btn btn-info" style="width: 100%">Search <i class="fa fa-search"></i></button>    
+</div>
+<div class="col-md-2">
+  <button class="btn btn-success" style="width: 100%" routerLink="/arrival">Advance <i class="fa fa-edit"></i> </button>    
+</div>
+<div class="col-md-2">
+  <button class="btn btn-warning" style="width: 100%">Clear <i class="fa fa-square-o"></i></button>   
+</div>
+<div class="col-md-2">
+  <button class="btn btn-success" style="width: 100%"routerLink="/reservation">Walk-in <i class="fa fa-sign-in"></i></button>   
+</div>
+<div class="col-md-2"></div>
+
+</div>
+</div>
+<br>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead >
+          <tr class="table table-primary" style="background-color: #0077B5;color: white ">
+                <th> </th>                        
+                <th><span><i class="fa fa-user"></i></span> Name</th>
+                <th><span><i class="fa fa-cube"></i></span> Room</th>
+                <th><span><i class="fa fa-edit"></i></span> Extension</th>
+                <th><span><i class="fa fa-cubes"></i></span> Room_Type</th>
+                <th><span><i class="fa fa-calendar"></i></span> Arrival</th>
+                <th><span><i class="fa fa-calendar"></i></span> Departure</th>
+                <th><span><i class="fa fa-pencil"></i></span> Rms</th>
+                <th><span><i class="fa fa-moon-o"></i></span> Nights</th>
+                <th><span><i class="fa fa-star"></i></span> Status</th>
+                <th><span><i class="fa fa-group"></i></span> Group</th>
+                <th><span><i class="fa fa-users"></i></span> Adults</th>                        
+                <th><span><i class="fa fa-user"></i></span> Child</th>
+                <th><span><i class="fa fa-money"></i></span> Rate_Code</th>
+                <th><span><i class="fa fa-money"></i></span> Rate</th>
+                <th><span><i class="fa fa-group"></i></span> Block_Code</th>
+                <th><span><i class="fa fa-cubes"></i></span> Packages</th>
+                <th><span><i class="fa fa-money"></i></span> Rtc</th>
+                <th><span><i class="fa fa-money"></i></span> Currency</th>
+                <th><span><i class="fa fa-pencil-square-o"></i></span> ETA</th>
+                <th><span><i class="fa fa-info"></i></span> Resv_Type</th>
+                <th><span><i class="fa fa-shopping-cart"></i></span> Market</th>
+                <th><span><i class="fa fa-share-square"></i></span> Source</th>            
+                <th><span><i class="fa fa-share-square"></i></span> Origin</th>            
+                <th><span><i class="fa fa-money"></i></span> Payment</th>            
+                <th><span><i class="fa fa-credit-card"></i></span> CreditCard_Number</th>            
+                <th><span><i class="fa fa-credit-card"></i></span> Exp_Date</th>            
+                <th><span><i class="fa fa-credit-card"></i></span> Guest_Balance</th>            
+                <th><span><i class="fa fa-cutlery"></i></span> Disc_Amount</th>            
+                <th><span><i class="fa fa-cutlery"></i></span> Disc_perc</th>  
+                <th><span><i class="fa fa-cutlery"></i></span> Disc_Reason</th>            
+                <th><span><i class="fa fa-cutlery"></i></span> Specilals</th>            
+                <th><span><i class="fa fa-comments"></i></span> Comments</th>            
+                <th><span><i class="fa fa-sitemap"></i></span> Item_Inv</th>            
+                          
+              </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let searched of searchandedit | filterdata: queryString :'pf_firstname'; let i = index">
+          <td> <input type="checkbox"></td> 
+          <td>  {{searched.pf_firstname}}</td>
+          <td> {{searched.res_room}} </td>
+          <td> {{searched.res_extension}} </td>
+          <td> {{searched.res_room_type}} </td>
+          <td> {{searched.res_arrival}} </td> 
+          <td> {{searched.res_depature}} </td>
+          <td> {{searched.res_room}} </td>
+          <td> {{searched.res_nights}} </td>
+          <td> {{searched.res_guest_status}} </td>
+          <td></td>     
+          <td> {{searched.res_adults}}</td> 
+          <td> {{searched.res_child}}</td>     
+          <td> {{searched.res_rate_code}}</td>     
+          <td> {{searched.res_rate}}</td>     
+          <td> {{searched.res_block_code}}</td> 
+          <td> {{searched.res_packages}}</td>     
+          <td> {{searched.res_rtc}}</td>     
+          <td> {{searched.res_currency}}</td>     
+          <td> {{searched.res_eta}}</td>
+          <td> {{searched.res_res_type}}</td>     
+          <td> {{searched.res_market}}</td> 
+          <td> {{searched.res_source}}</td>     
+          <td> {{searched.res_origin}}</td>     
+          <td> {{searched.res_payment}}</td>     
+          <td> {{searched.res_creditcard_number}}</td>     
+          <td> {{searched.res_exp_date}}</td>     
+          <td> {{searched.res_guest_balance}}</td>     
+          <td> {{searched.res_disc_amount}}</td>     
+          <td> {{searched.res_disc_perc}}</td>
+          <td> {{searched.res_disc_reason}}</td>     
+          <td> {{searched.res_specials}}</td>     
+          <td> {{searched.res_comments}}</td>     
+          <td> {{searched.res_item_inv}}</td>
+        </tr>
+              <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                   
+             </tr>
+             <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                             
+             </tr>
+             <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                             
+             </tr>
+             <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                        
+             </tr>
+             <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                            
+             </tr>
+             <tr>
+                <td><input type="checkbox" ></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td> 
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>
+                <td></td>     
+                <td></td>     
+                <td></td>     
+                <td></td>                          
+             </tr>                                                                                                                
+      </tbody>
+    </table>
+    </div>
+</div>
+<br>
+
+<div>
+  <button class="btn btn-info" style="width:10%;margin-left: 1%" routerLink="/reservation">New <i class="fa fa-square-o"></i></button>    
+  <button class="btn btn-primary"style="width:10%">Check-in <i class="fa fa-sign-in"></i> </button>    
+  <button class="btn btn-warning" style="width:11%">Cancel <i class="fa fa-tasks"></i></button>   
+  <button class="btn btn-info" style="width:11%">Reinstate <i class="fa fa-tasks"></i></button>   
+  <button class="btn btn-success" style="width:10%">Reg. Card <i class="fa fa-credit-card"></i></button>   
+  <button class="btn btn-info" style="width:10%" routerLink="/reservation"> Profile <i class="fa fa-user"></i></button>   
+  <button class="btn btn-primary" style="width:10%" routerLink="/reservationoption"> Options <i class="fa fa-caret-square-o-down"></i></button>   
+  <button class="btn btn-success" style="width:10%"> Edit <i class="fa fa-edit"></i></button>   
+  <button class="btn btn-danger" style="width:10%" routerLink="/mains"> Close <i class="fa fa-close"></i></button>   
+
+  </div>
+
+<br><br>
+</div>
+</div>
+
+
+<!---checkin--->

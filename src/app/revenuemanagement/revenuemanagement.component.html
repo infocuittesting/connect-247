@@ -1,0 +1,349 @@
+
+<div>
+  
+<!-- Top Level Tabs for revenue management screen -->
+
+  <div style="margin-left: 10px;margin-right: 10px;margin-top: 10px;">
+      <mat-tab-group class="mat-elevation-z4" color="accent" backgroundColor="primary">
+        <!-- 1st Tab for Rate Header -->
+        <mat-tab label="Rate Header">
+            <!-- Grid type view for Rate Header Tab -->
+            <mat-grid-list cols="4" rowHeight="100px">
+                <!-- 1 grid tile for dropdown of rate code in Rate Header Tab -->
+                <mat-grid-tile [colspan]=4 [rowspan]=1 >
+                    <mat-card class="mat-elevation-z4" style="width: 99.5%;height: 95%;">
+                        <mat-form-field>
+                            <mat-select placeholder="Rate Code" [formControl]="animalControl" required>
+                              <mat-option>--</mat-option>
+                              <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">
+                                {{ratetype.ratecode}}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error>
+                        </mat-form-field> 
+                    </mat-card>
+                </mat-grid-tile>
+                <!-- 2 grid tile for General Fields in Rate Header Tab -->
+                <mat-grid-tile [colspan]=2 [rowspan]=4 >
+                    <mat-card class="mat-elevation-z4" style="width:99%;height:99%">
+                        <mat-form-field >
+                            <input matInput placeholder="Rate Code">
+                        </mat-form-field>
+                        <mat-form-field style="margin-left:20px;">
+                            <input matInput placeholder="Description">
+                        </mat-form-field>
+                    </mat-card>
+                </mat-grid-tile>
+                <!-- 3 Transaction Details -->
+                <mat-grid-tile  [colspan]=2 [rowspan]=2 >
+                    <mat-card class="mat-elevation-z4" style="width:99%;height:98%">Transaction Details
+                        <br>
+                        <br>
+                        <br>
+                        <mat-form-field style="width:40%">
+                            <mat-select placeholder="Transaction Code" [formControl]="animalControl" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let transaction of transactioncode" [value]="transaction">
+                                  {{transaction.code}}
+                                </mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="animalControl.hasError('required')">Please choose Transaction Code</mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field style="width:40%;margin-left:50px">
+                            <mat-select placeholder="Currency Code" [formControl]="animalControl" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let currency of currencytype" [value]="currency">
+                                  {{currency.name}}
+                                </mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="animalControl.hasError('required')">Please choose Currency Code</mat-error>
+                        </mat-form-field>
+                    </mat-card>
+                </mat-grid-tile>
+                <!-- 4 Components -->
+                <mat-grid-tile  [colspan]=2 [rowspan]=2 >
+                    <mat-card class="mat-elevation-z4" style="width:99%;height:98%">Components
+                        <br>
+                        <br>
+                        <br>
+                        <section>
+                            <mat-checkbox [(ngModel)]="negotiated" [labelPosition]="before">Negotiated</mat-checkbox>
+                        </section>
+                        <br>
+                        <section>
+                            <mat-checkbox [(ngModel)]="Discount" [labelPosition]="before">Discount</mat-checkbox>
+                        </section>
+                    </mat-card>
+                </mat-grid-tile>
+                <!-- 5 Sell Control -->
+                <mat-grid-tile  [colspan]=4 [rowspan]=1 >
+                    <mat-card class="mat-elevation-z4" style="width:99.5%;height:98%">Sell Controls
+                        <mat-form-field style="margin-left:20%">
+                            <input matInput placeholder="Minimum Stay Through">
+                        </mat-form-field>
+                    </mat-card>
+                </mat-grid-tile>
+                <!-- 6 Functional Buttons -->
+                <mat-grid-tile  [colspan]=4 [rowspan]=1 >
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Deposit/Cxl</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Short Info</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Long Info</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Availability</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Changes</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Repeat</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Delete</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">New</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;">Save</button>
+                    <button mat-raised-button color="primary" style="margin-left:10px5px;margin-right:10px;">Close</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-tab>
+        <!-- 2nd Tab for Rate Detail -->
+        <mat-tab label="Rate Detail">
+            <!--1 card for ratecode dropdown -->
+            <div  class="row" style="margin-left: 5px;margin-right: 5px;margin-top: 5px;">
+                <mat-card>
+                    <mat-form-field>
+                        <mat-select placeholder="Rate Code" [formControl]="animalControl" required>
+                          <mat-option>--</mat-option>
+                          <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">
+                            {{ratetype.ratecode}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error>
+                    </mat-form-field> 
+                </mat-card>
+            </div>
+            <!--2 card for dates and amount -->
+            <div class="row" style="margin-top:5px;">
+              <div class="col-md-5">
+                <mat-card class="date-card">
+                  <mat-card-header>
+                    <mat-card-title>Dates</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <!-- dropdown -->
+                      <mat-form-field>
+                          <mat-select placeholder="Season Code" [formControl]="animalControl" required>
+                              <mat-option>--</mat-option>
+                              <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">{{ratetype.ratecode}}</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error>
+                      </mat-form-field>
+                      <br>
+                      <!-- datepicker for start date -->
+                      <mat-form-field>
+                          <input matInput [matDatepicker]="dp1" placeholder="Start date" >
+                          <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                          <mat-datepicker #dp1></mat-datepicker> 
+                      </mat-form-field>
+                      <!-- datepicker for end date -->
+                      <mat-form-field>
+                          <input matInput [matDatepicker]="dp2" placeholder="End date" >
+                          <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                          <mat-datepicker #dp2></mat-datepicker> 
+                      </mat-form-field><br>
+                      <br>
+                      <!-- checkbox for weekly -->
+                      <section class="example-section">
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="sunday" [labelPosition]="before">Sun</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="monday" [labelPosition]="before">Mon</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="tuesday" [labelPosition]="before">Tue</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="wednesday" [labelPosition]="before">Wed</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="thursday" [labelPosition]="before">Thu</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="friday" [labelPosition]="before">Fri</mat-checkbox>
+                          <mat-checkbox style="margin-left:7px;" class="example-margin" [(ngModel)]="saturday" [labelPosition]="before">Sat</mat-checkbox>
+                        </section>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+              <div class="col-md-7">
+                <mat-card class="date-card">
+                  <mat-card-header>
+                    <mat-card-title>Amounts</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <br>
+                  <mat-card-content>
+                    <mat-form-field class="amount-card-content">
+                      <input matInput placeholder="1 Adult" value="120.00">
+                    </mat-form-field>
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="2 Adults" value="250.00">                    
+                    </mat-form-field>        
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="3 Adults" value="390.00">
+                    </mat-form-field>  
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="4 Adults" value="540.00">                      
+                    </mat-form-field>
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="5 Adults" value="700.00">
+                    </mat-form-field>  
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="Extra Adult" value="10.00">
+                    </mat-form-field><br>
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="1 Child" value="">
+                    </mat-form-field>  
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="2 Children" value="">
+                    </mat-form-field>
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="3 Children" value="">
+                    </mat-form-field>
+                    <mat-form-field class="amount-card-content">
+                        <input matInput placeholder="4 Children" value="">
+                    </mat-form-field>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+            <!--3 card for attribute -->
+            <div class="row" style="margin-top:5px;">
+              <div class="col-md-12">
+                <mat-card class="mat-elevation-z4">
+                  <mat-card-header>
+                    <mat-card-title>Attributes</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <!--1st Market dropdown -->
+                    <mat-form-field class="attribute-card-mat-form-field">
+                      <mat-select placeholder="Market" [formControl]="animalControl" required>
+                          <mat-option>--</mat-option>
+                          <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">{{ratetype.ratecode}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error>
+                    </mat-form-field>
+                    <!--2nd Source dropdown -->
+                    <mat-form-field class="attribute-card-mat-form-field">
+                      <mat-select placeholder="Source" [formControl]="animalControl" required>
+                          <mat-option>--</mat-option>
+                          <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">{{ratetype.ratecode}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error>
+                    </mat-form-field>
+                    <!-- 3rd RoomType dropdown -->
+                    <mat-form-field class="attribute-card-mat-form-field">
+                      <mat-select placeholder="RoomTypes" [formControl]="toppings" multiple>
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let roomtype of roomtypes" [value]="roomtype">{{roomtype.name}}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <!-- 4th Table Filtering -->
+                    <mat-form-field class="attribute-card-mat-form-field">
+                        <input matInput (keyup)="applyFilterRateDetail($event.target.value)" placeholder="Filter Table Values">
+                    </mat-form-field>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+            <!--4 table content for Rate Detail Tab -->
+            <div class="row" style="margin-top:5px;">
+              <mat-table [dataSource]="rateDetail" class="mat-elevation-z4" style="margin-left: 5px;margin-right: 5px;"> 
+
+                  <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+                  
+                  <!-- StartDate Column -->
+                  <ng-container matColumnDef="start">
+                      <mat-header-cell *matHeaderCellDef> Start </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.start}} </mat-cell>
+                    </ng-container>
+                  
+                    <!-- EndDate Column -->
+                    <ng-container matColumnDef="end">s
+                      <mat-header-cell *matHeaderCellDef> End </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+                    </ng-container>      
+                        
+                  <!-- RoomType Column -->
+                  <ng-container matColumnDef="roomtype">
+                    <mat-header-cell *matHeaderCellDef> Room Types </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.roomtype}} </mat-cell>
+                  </ng-container>
+                            
+                  <mat-header-row *matHeaderRowDef="ratedetailColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: ratedetailColumns;"></mat-row>
+              </mat-table>
+            </div>
+            <!-- 5 button for Rate Detail Tab -->
+            <div class="row" style="margin-top:15px;margin-left:50px;margin-right:5px;height:110px">
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Changes</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Split</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Repeat</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Delete</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">New</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Save</button>
+                <button mat-raised-button color="primary" style="margin-left:5px;margin-right:5px;width: 12%;">Close</button>
+            </div>
+        </mat-tab>
+        <!-- 3rd Tab for Negotiated -->
+        <mat-tab label="Negotiated">
+            <!-- 1st dropdown,checkbox and filter table for Negotiated Tab-->
+            <mat-card style="margin-left: 5px;margin-right: 5px;margin-top: 5px;padding:10px;">
+                <mat-form-field>
+                    <mat-select placeholder="Rate Code" [formControl]="animalControl" required>
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let ratetype of ratecode" [value]="ratetype">
+                        {{ratetype.ratecode}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="animalControl.hasError('required')">Please choose Rate Code</mat-error> 
+                </mat-form-field>
+                <mat-checkbox style="margin-left: 200px;">Show Inactive</mat-checkbox>
+                <mat-form-field style="margin-left:200px;">
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Table Values">
+                </mat-form-field> 
+            </mat-card>
+            <!-- 2nd table content for Negotiated Tab-->
+            <div class="mat-elevation-z4">
+                <mat-table [dataSource]="dataSource" style="margin-left: 5px;margin-right: 5px;margin-top: 5px;"> 
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+                  
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="seq">
+                      <mat-header-cell *matHeaderCellDef> Seq </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.seq}} </mat-cell>
+                    </ng-container>
+                  
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="ratecode">
+                      <mat-header-cell *matHeaderCellDef> Rate Code </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.ratecode}} </mat-cell>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="startselldate">
+                      <mat-header-cell *matHeaderCellDef> Start Sell Date </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.startselldate}} </mat-cell>
+                    </ng-container>
+                  
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="endselldate">
+                      <mat-header-cell *matHeaderCellDef> End Sell Date </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.endselldate}} </mat-cell>
+                    </ng-container>
+                  
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                
+            </div>
+            <!-- 3rd buttons for Negotiated Tab -->
+            <div style="margin-top:20px;margin-left:150px;margin-right:5px;">
+              <button mat-raised-button color="primary" style="margin-left:60px;margin-right:10px;width: 15%;">Details</button>
+              <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;width: 15%;">New</button>
+              <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;width: 15%;">Edit</button>
+              <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;width: 15%;">Delete</button>
+              <button mat-raised-button color="primary" style="margin-left:10px;margin-right:10px;width: 15%;">Close</button>
+            </div>  
+        </mat-tab>
+        <!-- 4th tab for More -->
+        <mat-tab label="More"> Content 4 </mat-tab>
+      </mat-tab-group>  
+  </div>
+</div>

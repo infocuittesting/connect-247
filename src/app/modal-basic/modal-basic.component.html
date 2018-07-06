@@ -1,0 +1,1242 @@
+<!--select preference-->
+
+<div class="modal fade" id="#mySelect" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#0077B5;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Preference</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<!--new preference-->
+<div class="modal fade" id="myNew" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content" style="width:100%;">
+      <div class="modal-header" style="background-color:#0077B5;color:white;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select a Preference Group</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-2">
+            <b>Find</b>
+          </div>
+          <div class="col-lg-2">
+             <input type="text" style="height:36px;width:300%;border-radius:4px;">
+            </div>
+           </div><br>
+
+           <table class="table table-bordered table-hover">
+              <thead style="background-color:#0077B5;color:white;">
+                <tr>
+                  <th>Preference Group</th>
+                  <th>Description</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>INTEREST</td>
+                  <td>Profile Interest</td>
+               
+                </tr>
+                <tr>
+                  <td>KEY OPTIONS</td>
+                  <td>Options for Key Cards</td>
+               
+                </tr>
+                <tr>
+                   <td>ROOM FEATURES</td>
+                  <td>Room Features</td>
+               
+                </tr>
+                
+                   <tr>
+                   <td>SMOKING</td>
+                  <td>Non-Smoking/Smoking Preference</td>
+               
+                </tr>
+                
+                   <tr>
+                   <td>SPECIALS</td>
+                  <td>Specials</td>
+               
+                </tr>
+              </tbody>
+            </table>
+
+           
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal"><b>Find</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#mySelect"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Cancel</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+<!--changes start-->
+<div class="modal" id="myModal">
+  <div class="modal-dialog" style="padding-left:10px;">
+    <div class="modal-content" style="width:150%;">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- <h4 class="modal-title">Profile Options</h4> -->
+       <b> <button type="button" class="close" data-dismiss="modal">&times;</button></b>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+     <table class="table table-hover table-bordered" style="margin-left: 5%;width:90%;">
+        <thead style="background-color:#0077B5;color:white;">
+        <tr>
+        <th><span class="glyphicon glyphicon-user" style="padding-right:5px;" ></span>User</th>
+        <th><span class="glyphicon glyphicon-time" style="padding-right:5px;"></span>Time</th>
+        <th><span class="glyphicon glyphicon-calendar" style="padding-right:5px;" ></span>Date</th>
+         <th><span class="glyphicon glyphicon-thumbs-up" style="padding-right:5px;"></span>Action Type</th>
+          <th><span class="glyphicon glyphicon-list-alt" style="padding-right:5px;" ></span>Description</th>
+        </tr>
+        </thead>
+        
+    <tbody >
+        <tr *ngFor="let tablelist of tables">
+        <td>{{tablelist.emp_id}}</td>
+        <td> {{tablelist.pf_log_time}}</td>
+        <td> {{tablelist.pf_log_date}}</td>
+        <td> {{tablelist.pf_action_type}}</td>
+        <td> {{tablelist.pf_log_description}}</td>
+        </tr>
+
+        
+        </tbody>
+      </table> 
+      
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--Changes end --> 
+
+<!--Credit Card start-->
+
+
+<div class="modal" id="credit">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width:150%;">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- <h4 class="modal-title">Modal Heading</h4> -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div>
+              <table class="table table-hover table-bordered" style="width: 90%;margin-left: 2%;">
+               <thead style="background-color: steelblue; color: white;">
+                   <tr>
+                      <th>Seq.</th>
+                      <th> Card Type</th>
+                      <th> Credit Card Number</th>
+                      <th>Expiration Date</th>
+                   </tr>
+               </thead> 
+               <tbody>
+                      <tr *ngFor="let creditlist of credit">
+                              <td><input type="text" [(ngModel)]="creditlist.pf_sequence" /></td>
+                              <td><input type="text" [(ngModel)]="creditlist.pf_card_type" /></td>
+                              <td><input type="text" [(ngModel)]="creditlist.pf_creditcard_no" /></td>
+                              <td><input type="text" [(ngModel)]="creditlist.pf_expiration_date" /></td>
+                           </tr>
+                           <tr style="height:40px;">
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                           </tr>             
+                           <tr style="height:40px;">
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                               </tr>
+                              
+                               <tr style="height:40px;">
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                   </tr>   
+                                                                                                               
+               </tbody>   
+              
+              </table>
+            
+            
+              </div>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <table>
+          <tr>
+        
+        <td><button class="btn btn-info"><b>New</b> <span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+        <td style="padding-left:5px;"><button class="btn btn-success" (click)="insertFun()" data-toggle="modal" data-target="#myinsert"><b>Ok</b> <span class="glyphicon glyphicon-file" styl ne="padding-left:5px;"></span></button></td>
+        <td style="padding-left:5px;"><button class="btn btn-success" (click)="updateCreditFun()"><b>Save</b> <span class="glyphicon glyphicon-file" styl ne="padding-left:5px;"></span></button></td>
+        <td style="padding-left:5px;"><button class="btn btn-success" style="width: 150px;"><b>Edit</b> <span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button></td>
+        <td style="padding-left:5px;"><button class="btn btn-warning" style="width: 150px;"><b>Delete</b> <span class="glyphicon glyphicon-trash" style="padding-left:5px;"></span></button></td>
+        <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+      </tr>
+      </table>
+      </div>   
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- credit insert-->
+<div class="modal fade" id="myinsert" role="dialog" style="padding-top:300px;">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <b style="padding-left:30px;">Record Inserted successfully.</b><br><br>
+        <b style="padding-left:450px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></b>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+<!-- negotiated insert-->
+<div class="modal fade" id="negoinsert" role="dialog" style="padding-top:550px;">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <b style="padding-left:30px;">Record Inserted successfully.</b><br><br>
+        <b style="padding-left:450px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></b>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--Credit Card end-->
+
+<!--future-->
+<!-- The Modal -->
+<div class="modal" id="future">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:150%;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <!-- <h4 class="modal-title">Modal Heading</h4> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div>
+                <table class="table table-hover table-bordered" style="width: 95%;margin-left: 2%;">
+                  <thead style="background-color:#0077B5;color:white;">
+                    <tr width="100%">
+                      <th>Arrival</th>
+                      <th>Departure</th>
+                      <th>Room</th>
+                       <th>Room Type</th>
+                         <th>Rate</th>
+                      <th>Rate Code</th>
+                      <th>Adults</th>
+                       <th>Child</th>
+                          <th>Name</th>
+                       
+                       
+                    </tr>
+                  </thead>
+                  <tbody style="background-color:white;">
+                    <tr>
+                      <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                      <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                      <td>444</td>
+                      <td>KNGN</td>
+                        <td>100.00</td>
+                          <td>RACK</td>
+                      <td>1</td>
+                      <td>4</td>
+                    
+                        <td>O's Corner,Paris</td>
+                         
+                      
+                     
+                    </tr>
+                      
+                    <tr>
+                      <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                      <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                      <td>444</td>
+                      <td>KNGN</td>
+                        <td>100.00</td>
+                          <td>RACK</td>
+                      <td>1</td>
+                      <td>4</td>
+                    
+                        <td>O's Corner,Paris</td>
+                         
+                      
+                     
+                    </tr>
+                    
+                     <tr style="height:40px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                    </tr>
+                    
+                       <tr style="height:40px;">
+                     <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                  
+                    </tr>
+                    
+                       <tr style="height:40px;">
+                    <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    
+                       <tr style="height:40px;">
+                    <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                   
+                    </tr>
+                    
+                     <tr style="height:40px;">
+                 <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <table>
+            <tr>
+            <td style="padding-left:160px;"><button type="button" class="btn btn-warning" style=" margin-left: 100px;width: 150px;"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-primary" style=" width: 150px;"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success" style=" width: 150px;"><b>Edit</b><span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button></td>
+            
+          <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+        </tr>
+        </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+ <!--Future End-->
+
+<!--History-->
+<div class="modal" id="history">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:150%;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <!-- <h4 class="modal-title">Modal Heading</h4> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div>
+                <table class="table table-hover table-bordered" style="width: 90%;margin-left:5%;">
+                <thead style="background-color:#0077B5;color:white;">
+                  <tr>
+                    <th><span class="glyphicon glyphicon-calendar" style="padding-right:10px;"></span>Arrival</th>
+                    <th><span class="glyphicon glyphicon-calendar" style="padding-right:10px;"></span>Departure</th>
+                    <th><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span>Room</th>
+                     <th><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span>Room Type</th>
+                       <th><span class="glyphicon glyphicon-usd" style="padding-right:10px;"></span>Rate</th>
+                    <th><span class="glyphicon glyphicon-usd" style="padding-right:10px;"></span>Rate Code</th>
+                    <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Adults</th>
+                     <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Child</th>
+                        <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Name</th>
+                     
+                     
+                  </tr>
+                </thead>
+                <tbody style="background-color:white;">
+                  <tr>
+                    <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                    <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                    <td>444</td>
+                    <td>KNGN</td>
+                      <td>100.00</td>
+                        <td>RACK</td>
+                    <td>1</td>
+                    <td>4</td>
+                  
+                      <td>O's Corner,Paris</td>
+                       
+                    
+                   
+                  </tr>
+                    
+                  <tr>
+                    <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                    <td><input type="text" style="width: 90%; margin-left: 5%"></td>
+                    <td>444</td>
+                    <td>KNGN</td>
+                      <td>100.00</td>
+                        <td>RACK</td>
+                    <td>1</td>
+                    <td>4</td>
+                  
+                      <td>O's Corner,Paris</td>
+                       
+                    
+                   
+                  </tr>
+                  
+                   <tr style="height:40px;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                  </tr>
+                  
+                     <tr style="height:40px;">
+                   <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                
+                  </tr>
+                  
+                     <tr style="height:40px;">
+                  <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                      
+                  </tr>
+                  
+                     <tr style="height:40px;">
+                  <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                 
+                  </tr>
+                  
+                   <tr style="height:40px;">
+                <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                      <td></td>
+                      
+                  </tr>
+                  
+                </tbody>
+                </table>
+              </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <table>
+            <tr>
+          
+            <td style="padding-left:305px;"><button type="button" class="btn btn-primary"><b>Sumary</b><span class="glyphicon glyphicon-list-alt" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-info"><b>Points</b><span class="glyphicon glyphicon-leaf" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success"><b>Resv.</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-primary"><b>Turn away</b><span class="glyphicon glyphicon-random"style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"> <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+
+          </tr>
+          </table> 
+            
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!--History End-->
+
+<!-- Merge-->
+<div class="modal" id="merge">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:100%;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <!-- <h4 class="modal-title">Modal Heading</h4> -->
+          <button type="button" class="close" data-dismiss="modal"><b>&times;</b></button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <table class="table table-bordered"style="width: 90%;margin-left: 5%;">
+                <thead style="background-color:#0077B5;color:white;">
+                  <tr>
+                    <th></th>
+                    <th>Profile to Merge</th>
+                    <th>Original profile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-user" style="padding-left:10px;padding-right:10px;"></span><b>Name</b></td>
+                    <td>Mathews, Mark</td>
+                    <td>Mathews, Mark</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-folder-open" style="padding-left:10px;padding-right:10px;"></span><b>Title</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-font" style="padding-left:10px;padding-right:10px;"></span><b>Language</b></td>
+                    <td>English</td>
+                    <td>English</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-map-marker" style="padding-left:10px;padding-right:10px;"></span><b>Address 1</b></td>
+                    <td>1717 Emerson Ave</td>
+                    <td>300 College Parkway</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-map-marker" style="padding-left:10px;padding-right:10px;"></span><b>Address 2</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-map-marker" style="padding-left:10px;padding-right:10px;"></span><b>City</b></td>
+                    <td>London</td>
+                    <td>Brighton</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-map-marker" style="padding-left:10px;padding-right:10px;"></span><b>State</b></td>
+                    <td></td>
+                    <td>ML</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-map-marker" style="padding-left:10px;padding-right:10px;"></span><b>Country</b></td>
+                    <td></td>
+                    <td>US</td>
+                  </tr>     
+                <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-tint" style="padding-left:10px;padding-right:10px;"></span><b>Postal Code</b></td>
+                    <td></td>
+                    <td>4811</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-earphone" style="padding-left:10px;padding-right:10px;"></span><b>Phone No.</b></td>
+                    <td></td>
+                    <td>410-777-3828</td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-user" style="padding-left:10px;padding-right:10px;"></span><b>Fax No.</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-file" style="padding-left:10px;padding-right:10px;"></span><b>Notes</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-pencil" style="padding-left:10px;padding-right:10px;"></span><b>MemberShip No.</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-user" style="padding-left:10px;padding-right:10px;"></span><b>VIP</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-home" style="padding-left:10px;padding-right:10px;"></span><b>Last Stay</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                     <tr>
+                    <td style="background-color:#0077B5;color:white;"><span class="glyphicon glyphicon-pencil" style="padding-left:10px;padding-right:10px;"></span><b>Rate Code</b></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <table>
+            <tr>
+           <td style="padding-left:305px;"> <button type="button" class="btn btn-success"><b>Merge</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+          <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+        </tr>
+        </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!--Merge End-->
+
+
+<!--notes-->
+
+<div class="modal" id="notes">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:150%;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <!-- <h4 class="modal-title">Modal Heading</h4> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div>
+                <br>
+                    <table style=" width:95%; margin-left: 2%; border: 1px solid lightgray;height:70px;">
+                       <tr>
+                        <td style="padding-left:30px;"><b>Note Type</b></td>
+          <td style="padding-left:15px;"><select id="curr" required style="width:180px;border-radius:4px;color:black;">
+           
+          <option value = "select1"> General Notes</option>
+          <option value = "Goa">YEN</option>
+          <option value = "New Delhi">INR</option>
+          <option value = "Bangalore">POUND</option>
+          <option value = "Mumbai">EURO</option></select></td>
+          
+          
+          <td>Internal Only</td>
+          <td><input type="checkbox" style="width:20px;height:20px;"></td>
+          
+          
+          
+          <td style="padding-left:100px;"><button type="button" class="btn btn-warning" style="height:30px;"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button></td>
+          </tr>
+                        </table>
+                       <br>
+                       
+                        <table class="table table-hover table-bordered" style=" width:95%; margin-left: 2%;">
+            <thead style="background-color:#0077B5;color:white;">
+              <tr>
+                <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Int</th>
+                <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Note Type</th>
+                <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Note Title</th>
+                   
+              </tr>
+            </thead>
+            <tbody style="background-color:white;">
+                <tr *ngFor="let notelist of notes">
+                   <td></td> 
+                    <td><input type="text" [(ngModel)]="notelist.pf_note_type" /></td>
+                    <td><input type="text" [(ngModel)]="notelist.pf_note_title" /> </td>
+                    
+                    </tr>
+                
+               
+            
+                
+             
+              
+               <tr style="height:40px;">
+                <td></td>
+                <td></td>
+                <td></td>
+            
+                
+              </tr>
+              
+                <tr style="height:40px;">
+                <td></td>
+                <td></td>
+                <td></td>
+            
+                
+              </tr>
+              
+                   <tr style="height:40px;">
+                <td></td>
+                <td></td>
+                <td></td>
+               
+                
+              </tr>
+              
+               <tr style="height:40px;">
+                <td></td>
+                <td></td>
+                <td></td>
+                
+                
+              </tr>
+              
+                  <tr style="height:40px;">
+                <td></td>
+                <td></td>
+                <td></td>
+               
+                
+              </tr>
+            
+              
+            </tbody>
+          </table >
+            <textarea rows="3" style=" width:95%;">
+          
+           
+          </textarea>
+          
+                    </div>
+                    
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success"  (click)="insertnotesFun()" data-toggle="modal" data-target="#negoinsert" data-dismiss="modal"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+            
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="insertnegoFun()"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 
+
+<!--notes end-->
+
+  <!--negotiated temp-->
+
+  <div class="modal" id="negotiated">
+      <div class="modal-dialog">
+        <div class="modal-content" style="width:150%;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <!-- <h4 class="modal-title">Modal Heading</h4> -->
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+              <table style=" width:95%; margin-left: 2%; border: 1px solid lightgray;height:70px;">
+                        
+                  <tr>
+                  <td style="padding-left:30px;"><b>Rate Code</b></td>
+  <td style="padding-left:15px;"><select id="curr" required style="width:180px;border-radius:4px;color:black;height:30px;">
+  <option value = "select1"> </option>
+  <option value = "Goa">YEN</option>
+  <option value = "New Delhi">INR</option>
+  <option value = "Bangalore">POUND</option>
+  <option value = "Mumbai">EURO</option></select></td>
+  
+  
+  
+  <td style="padding-left:80px;"><input type="checkbox" style="width:20px;height:20px;"></td>
+  
+  <td>Show Active</td>
+  
+  <td><button type="button" class="btn btn-warning"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button></td>
+  </tr>
+                  </table><br>
+       
+    <table class="table table-hover table-bordered" style=" width:95%; margin-left: 2%;">
+      <thead style="background-color:#0077B5;color:white;">
+        <tr>
+          <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Seq.</th>
+          <th><span class="glyphicon glyphicon-usd" style="padding-right:10px;"></span>Rate Code</th>
+          <th><span class="glyphicon glyphicon-calendar" style="padding-right:10px;"></span>Start Sell</th>
+           <th><span class="glyphicon glyphicon-calendar" style="padding-right:10px;"></span>End Sell Date</th>
+            
+           
+           
+        </tr>
+      </thead>
+      <tbody style="background-color:white;">
+        <tr *ngFor="let negotiatedlist of negotes" >
+        <td><input type="text" [(ngModel)]="negotiatedlist.pf_negotiated_sequence" /></td>
+        <td><input type="text" [(ngModel)]="negotiatedlist.pf_rate_code" /></td>
+        <td><input type="text" [(ngModel)]="negotiatedlist.pf_start_sell_date" /></td>
+        <td><input type="text" [(ngModel)]="negotiatedlist.pf_end_sell_date" /></td>
+        
+          
+         
+        </tr>
+          
+       
+        
+         <tr style="height:40px;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+        
+          <tr style="height:40px;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+        
+             <tr style="height:40px;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+        
+         <tr style="height:40px;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+        
+            <tr style="height:40px;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <table>
+              <tr>
+           <td style="padding-left:250px;"> <button type="button" class="btn btn-info" ><b>Detail</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+           <td style="padding-left:5px;"> <button type="button" class="btn btn-success" (click)="insertnegoFun()" data-toggle="modal"  data-dismiss="modal" data-target="#negoinsert"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button></td>
+           <td style="padding-left:5px;"> <button type="button" class="btn btn-success" (click)="updateNegotiatedFun()"><b>Save</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-primary"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success" ><b>Edit</b><span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-danger" ><b>Delete</b><span class="glyphicon glyphicon-trash" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+          </tr>
+        </table>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+   
+
+ <!-- Negotiate End-->
+
+<!--Perference template-->
+  
+<div class="modal" id="preferences">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:150%;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <!-- <h4 class="modal-title">Modal Heading</h4> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div>
+                <br>
+                <table style=" width:95%; margin-left: 2%; border: 1px solid lightgray;background-color: white;height:70px;" >
+                       
+                       <tr>
+                       <td style="padding-left:20px;"><b>Preference Group</b></td>
+         <td style="padding-left:15px;"><select id="curr" required style="width:180px;border-radius:4px;color:black;height:25px;">
+         <option value = "select1"> General Notes</option>
+         <option value = "Goa">YEN</option>
+         <option value = "New Delhi">INR</option>
+         <option value = "Bangalore">POUND</option>
+         <option value = "Mumbai">EURO</option></select></td>
+         
+         
+               <td style="padding-left:50px;"><b>Preference</b></td>
+         <td style="padding-left:15px;"><select id="curr" required style="width:180px;border-radius:4px;color:black;height:30px;">
+         <option value = "select1"> General Notes</option>
+         <option value = "Goa">YEN</option>
+         <option value = "New Delhi">INR</option>
+         <option value = "Bangalore">POUND</option>
+         <option value = "Mumbai">EURO</option></select></td>
+         
+         
+         
+         
+         
+         <td style="padding-left:30px;"><button type="button" class="btn btn-warning" style="height:30px;"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button></td>
+         </tr>
+                       </table>
+                      
+            <br>
+         <table class="table table-hover table-bordered"style=" width:95%; margin-left: 2%; background-color:white;">
+           <thead style="background-color:#0077B5;color:white;">
+             <tr>
+               <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Preference Group</th>
+               <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Description</th>
+               <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Preferences</th>
+                
+                 
+                
+                
+             </tr>
+           </thead>
+           <tbody style="background-color:white;">
+             <tr *ngFor="let preferlist of prefer">
+             <td><input type="text" [(ngModel)]="preferlist.pf_preference_group" /></td>
+             <td><input type="text" [(ngModel)]="preferlist.pf_preference_description" /></td>
+             <td><input type="text" [(ngModel)]="preferlist.pf_guest_preference" /></td>
+             
+               
+              
+             </tr>
+               
+            
+             
+              <tr style="height:40px;">
+               <td></td>
+               <td></td>
+               <td></td>
+           
+               
+             </tr>
+             
+               <tr style="height:40px;">
+               <td></td>
+               <td></td>
+               <td></td>
+           
+               
+             </tr>
+             
+                  <tr style="height:40px;">
+               <td></td>
+               <td></td>
+               <td></td>
+              
+               
+             </tr>
+             
+              <tr style="height:40px;">
+               <td></td>
+               <td></td>
+               <td></td>
+               
+               
+             </tr>
+             
+                 <tr style="height:40px;">
+               <td></td>
+               <td></td>
+               <td></td>
+              
+               
+             </tr>
+           
+             
+           </tbody>
+         </table>
+         
+           <textarea rows="4" style=" width:95%; margin-left: 2%;background-color: white;">
+            
+                     
+         </textarea>
+        </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <table>
+            <tr>
+            <td style="padding-left:400px;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myNew" data-dismiss="modal"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success" (click)="insertPreferFun()" data-toggle="modal" data-target="#negoinsert" data-dismiss="modal"><b>OK</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success"><b>Edit</b><span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-danger"><b>Delete</b><span class="glyphicon glyphicon-trash" style="padding-left:5px;"></span></button></td>
+          <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+        </tr>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+<div class="row" style="padding-left:160px;padding-top:80px;">
+  <div class="col-md-1 col-sm-1 col-lg-1 col-xl-1">
+ </div>
+<!--Changes-->   
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body" data-toggle="modal" data-target="#myModal">
+<img src="assets/images/changes.jpg" alt="change" style="border-radius:50%;">
+<h4  align="center">Changes</h4>
+<!-- <p  align="center"><small>Change Profile Options</small></p> -->
+</div>
+<div class="panel-footer">
+<p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Change profile</small></p>
+<p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Change Alert!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body"  data-toggle="modal" data-target="#credit">
+<img src="assets/images/credit_card.png" alt="alert" style="border-radius:50%;border:solid 8px PaleTurquoise ;">
+<h4  align="center">Credit Card</h4>
+<!-- <p  align="center"><small>Accept All Credit Cards</small></p> -->
+</div>
+<div class="panel-footer">
+<p style=" margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> profile Credit Card</small></p>
+<p style=" margin-top:-10px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Card Request!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body">
+<img src="assets/images/enrollment.png" alt="change" style="border-radius:50%; border:solid 10px Aquamarine;">
+<h4  align="center"> Enrollment</h4>
+<!-- <p align="center"><small> Profile Enrollment</small></p> -->
+</div>
+<div class="panel-footer">
+<p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Profile Enrollment Mail</small></p>
+<p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Enrollment Alert!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body">
+  <img src="assets/images/delete-300x300.jpg" alt="change" style="border-radius:50%;border:solid 10px Tan ;">
+  <h4  align="center"> Delete</h4>
+  <!-- <p align="center"><small> Confirmation profile Delete</small></p> -->
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Delete Profile Details</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Delete Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body" data-toggle="modal" data-target="#future">
+    <img src="assets/images/future.png" alt="change" style="border-radius:50%; border:solid 10px Tan ;">
+    <h4 align="center"> Future</h4>
+    <!-- <p align="center"><small> Profile Futures</small></p> -->
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Profile Mail</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Future Alert!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+    
+</div><!--End of row-->
+<!-- <br> -->
+<div class="row" style="padding-left:160px;">
+<div class="col-md-1 col-sm-1 col-lg-1 col-xl-1">
+</div>
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body" data-toggle="modal" data-target="#history">
+<img src="assets/images/history.png" alt="change" style="border-radius:50%; border:solid 10px BurlyWood;">
+<h4  align="center">History</h4>
+<!-- <p align="center"><small>Customer History</small></p> -->
+</div>
+<div class="panel-footer">
+<p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Customer Profile History</small></p>
+<p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Profile History!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body" data-toggle="modal" data-target="#merge">
+<img src="assets/images/merge.png" alt="alert" style="border-radius:50%; border:solid 8px PaleTurquoise ;">
+<h4  align="center"> Merge </h4>
+<!-- <p align="center"><small>Profile Merge</small></p> -->
+</div>
+<div class="panel-footer">
+<p style=" margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Merge Profile Email</small></p>
+<p style=" margin-top:-10px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Merge Alert!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body" data-toggle="modal" data-target="#negotiated ">
+<img src="assets/images/negotiation.png" alt="change" style="border-radius:50%; border:solid 10px LightSteelBlue;">
+<h4 align="center">Negotiated</h4>
+<!-- <p align="center"><small>Customer Negotiated Rate</small></p> -->
+</div>
+<div class="panel-footer">
+<p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Profile Negotiated</small></p>
+<p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Negotiated Rate Alert!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+<div class="panel">
+<div class="panel-body" data-toggle="modal" data-target="#notes">
+<img src="assets/images/notes.png" alt="change" style="border-radius:50%; border:solid 8px Moccasin;">
+<h4 align="center"> Notes</h4>
+<!-- <p align="center"><small>Customer Notes</small></p> -->
+</div>
+<div class="panel-footer">
+<p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Profile Notes </small></p>
+<p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Customer Request!</small></p>
+</div>
+</div>
+</div><!-- column 1 for 1 row -->
+
+<div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body" data-toggle="modal" data-target="#preferences">
+  <img src="assets/images/preferences.png" alt="change" style="border-radius:50%; border:solid 10px Silver;">
+  <h4 align="center">Preferences</h4>
+  <!-- <p align="center"><small>Profile Preference</small></p> -->
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Customer	Preference</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Preference Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+</div>

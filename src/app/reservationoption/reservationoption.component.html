@@ -1,0 +1,1712 @@
+
+
+     <!-- Alert start-->
+     <div class="modal fade" id="alert" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content" style="width:150%;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"> Alert</h4>
+          </div>
+          <div class="modal-body">
+            <div class="panel panel-primary" style="width:90%;margin-left: 5%; height: 280px;">
+              <!-- <div class="panel-heading"><b></b> <span class="glyphicon glyphicon-remove" style="padding-left:590px;"></span></div> -->
+              <div class="panel-body">
+                <br>
+              <table>
+              <tr>
+              <td><b>Code</b></td>
+            <td style="padding-left:60px;"><select id="curr" [(ngModel)]="ES_Alert_Code" required style="height:30px;border-radius:4px;width:240px;color:black;background-color:#0077B5;color:white;">
+            <option value = "select1">PRIVATE</option>
+            <option value = "Goa">PUBLIC</option>
+            </select></td>
+            
+             <td style="padding-left:60px;"><b>Area</b></td>
+            <td style="padding-left:15px;"><select id="curr" [(ngModel)]="RES_Alert_Area" required style="height:30px;border-radius:4px;width:240px;color:black;background-color:#0077B5;color:white;">
+            <option value = "select1">Check-In</option>
+            <option value = "Goa">Check-Out</option>
+            </select></td>
+            
+              </tr>
+              
+              </table><br><br>
+              <table>
+              <tr>
+              <td><b>Description</b></td>
+              <td style="padding-left:15px;"><textarea rows="5" cols="78" style="border-radius:8px;" [(ngModel)]="RES_Alert_Description">
+              Private Guest.Do not address guest by name.
+            </textarea></td>
+              </tr>
+              </table><br><br>
+              
+              
+              
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+
+               <button type="button" class="btn btn-success"style="margin-left: 70%;" data-dismiss="modal" (click)="alertsub(alerts)"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+             <button type="button" class="btn btn-danger" style="padding-left:5px;"data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+    <!-- Alert End -->
+
+
+    <!-- changes start-->
+    <div class="modal fade" id="changes" role="dialog">
+      <div class="modal-dialog">
+   
+    <div class="modal-content" style="width:140%;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Changes</h4> 
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid" style="width:100%;">
+          <div class="jumbotron jumbotron-fluid">
+       <div class="table-responsive"style="height:45%;width:100%;overflow-y: auto;">
+      <table class="table table-hover table-bordered" >
+      <thead style="background-color:#0077B5;color:white;">
+        <tr>
+          <th> </th>
+          <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>User</th>
+          <th><span class="glyphicon glyphicon-time" style="padding-right:10px;"></span>Time</th>
+          <th><span class="glyphicon glyphicon-calendar" style="padding-right:10px;"></span>Date</th>
+           <th><span class="glyphicon glyphicon-thumbs-up" style="padding-right:10px;"></span>Action Type</th>
+            <th><span class="glyphicon glyphicon-list-alt" style="padding-right:10px;"></span>Description</th>
+        </tr>
+      </thead>
+      <tbody style="background-color:white;" >
+        <tr *ngFor="let tablelist of tableschanges">
+          <th> <input type="checkbox"></th>
+          <td>{{tablelist.emp_firstname}}</td>
+          <td> {{tablelist.res_log_time}}</td>
+          <td> {{tablelist.res_log_date}}</td>
+          <td> {{tablelist.res_action_type}}</td>
+          <td> {{tablelist.res_description}}</td>
+        </tr>
+        
+      
+      </tbody>
+      </table>
+    </div></div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+    <!-- changes End -->
+  
+
+   <!-- confirmation start -->
+   <div class="modal fade" id="confirm" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="width:140%;" >
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!-- <h4 class="modal-title">Modal Header</h4> -->
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid"  style="width:80%;margin-left: 20px;">
+            <div class="jumbotron jumbotron-fluid" style="width:120%;padding-top:20px;background-color:#0077B5;color:white;height:auto;">
+            
+            <table>
+            <tr>
+            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+            <td style="padding-left:15px;"><b>Print</b></td>
+            <td style="padding-left:30px;"><input type="checkbox" style="width:15px;height:15px;"></td>
+             <td style="padding-left:15px;"><b>Email</b></td>
+             <td style="padding-left:30px;"><input type="checkbox" style="width:15px;height:15px;"></td>
+              <td style="padding-left:15px;"><b>Fax</b></td>
+              <td style="padding-left:30px;"><input type="checkbox"  style="width:15px;height:15px;"></td>
+               <td style="padding-left:15px;"><b>SMS</b></td>
+            </tr>
+            
+            </table><br>
+                 
+               <table class="table table-responsive table-hover table-bordered"  style="width:120%;">
+               <thead class="thead-light" style="background-color:#0077B5;color:white;">
+                 <tr>
+                   
+                  <th><span class="fa fa-user" style="padding-right:10px;"></span>Name</th>
+                   <th><span class="	fa fa-asterisk" style="padding-right:10px;"></span>Type</th>
+                    <th><span class="fa fa-user" style="padding-right:10px;"></span>Conf.Name</th>
+                   <th><span class="fa fa-user" style="padding-right:10px;"></span>Address</th>
+                    <th><span class="	fa fa-envelope" style="padding-right:10px;"></span>Email</th>
+                   <th><i class="fa fa-fax" style="padding-right:10px;"></i>Fax</th>
+                  
+                 </tr>
+               </thead>
+               <tbody style="background-color:white;color:black;">
+                  <tr style="height:35px;">
+                   <td>Harris</td>
+                   <td>Guest</td>
+                  <td></td>
+                   <td>Phoneix 85044 AZ U</td>
+                  
+                   <td></td>
+                   <td></td>
+                 </tr>
+                 <tr style="height:35px;">
+                   <td>Microsystem</td>
+                   <td>Company</td>
+                    <td></td>
+                   <td>7031 Columbia Gateway</td>
+                
+                   <td></td>
+                   <td></td>
+                 </tr>
+                   <tr style="height:35px;">
+                   <td>ABC Travel</td>
+                   <td>Agent</td>
+                <td></td>
+                   <td>123 MainStreet</td>
+                    
+                   <td></td>
+                   <td></td>
+                 </tr>
+               
+                 <tr style="height:35px;">
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                   <td></td>
+                   <td></td>
+                 </tr>
+               
+                   <tr style="height:35px;">
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                   <td></td>
+                   <td></td>
+                 </tr>
+               
+                 <tr style="height:35px;">
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                   <td></td>
+                   <td></td>
+                 </tr>
+               
+                 <tr style="height:35px;">
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                   <td></td>
+                   <td></td>
+                 </tr>
+               
+               
+                </tbody>
+             </table>
+             </div>
+             </div>
+             <br>
+           <div class="container-fluid" style="width:80%;margin-left: 20px;">  
+           <div class="jumbotron jumbotron-fluid" style="padding-top:20px;width:120%;height:230px;background-color:#0077B5;">
+             <table class="table table-hover table-bordered"  style="width:120%;">
+               <thead class="thead-light" style="background-color:#0077B5;color:white;">
+                 <tr>
+                   
+                  
+                    <th></th>
+                   <th>Status</th>
+                    <th>Last Attempt</th>
+                   <th>Successful Attempt</th>
+                  
+                 </tr>
+               </thead>
+               <tbody style="background-color:white;">
+             <tr style="height:35px;">
+                   <td><i class="fa fa-fax" style="padding-right:10px;color:#0077B5;"></i><b style="color:#0077B5;">Fax</b></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                  </tr>
+               
+                 <tr style="height:35px;">
+                   <td> <span class="fa fa-envelope" style="padding-right:10px;color:#0077B5;"></span><b style="color:#0077B5">Email</b></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                  </tr>
+               
+                 <tr style="height:35px;">
+                   <td>  <span class="fa fa-print" style="padding-right:10px;color:#0077B5;"></span><b style="color:#0077B5">Print</b></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                  </tr>
+               
+                 <tr style="height:35px;">
+                   <td>  <span class="fa fa-envelope" style="padding-right:10px;color:#0077B5;"></span><b style="color:#0077B5">SMS</b></td>
+                   <td></td>
+                   <td></td>
+                     <td></td>
+                  </tr>
+               
+               
+                </tbody>
+             </table>
+             </div>
+             </div>
+        
+        </div>
+        <div class="modal-footer">
+  <table>
+    <tr>
+          <td style="padding-left:150px;">  <button type="button" class="btn btn-primary"><b>Customize</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-info"><b>File</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-warning"><b>Preview</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success"><b>Send</b><span class="glyphicon glyphicon-send" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-info"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-success"><b>save</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+          <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+        </tr>
+        </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+     <!-- Confirmation End -->
+
+  
+   <!-- credit card start -->
+   <div class="modal fade" id="credit" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="width:150%;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Credit Card</h4> 
+        </div>
+        <div class="modal-body">
+            <div>
+                <table class="table table-hover table-border" style="width: 90%;">
+                 <thead style="background-color: steelblue; color: white;">
+                     <tr>
+                        <th>Seq.</th>
+                        <th> Card Type</th>
+                        <th> Credit Card Number</th>
+                        <th>Expiration Date</th>
+                     </tr>
+                 </thead> 
+                 <tbody>
+                                           <tr>
+                                <td><input type="text" [(ngModel)]="user.PF_Sequence" ></td>
+                                <td><input type="text" [(ngModel)]="user.PF_Card_Type"></td>
+                                <td><input type="text" [(ngModel)]="user.PF_Creditcard_No"></td>
+                                <td><input type="text" [(ngModel)]="user.PF_Expiration_Date"></td>
+                             </tr>
+                             <tr>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                             </tr>
+                             <tr>
+                                <td><input type="text"  ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                             </tr>                  
+                            <tr>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                                <td><input type="text" ></td>
+                             </tr>
+                                                                                                       
+                 </tbody>   
+                
+                </table>
+              
+              
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+          <table>
+          <tr>
+  
+           <td style="padding-left:300px;"> <button type="button" class="btn btn-primary"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button></td>
+           <td style="padding-left:5px;"> <button type="button" class="btn btn-success"(click)="submit(user)" data-dismiss="modal"><b>ok</b><span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button></td>
+            <td style="padding-left:5px;"><button type="button" class="btn btn-danger"><b>Delete</b><span class="glyphicon glyphicon-trash" style="padding-left:5px;"></span></button></td>
+          <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+        </tr>
+        </table>
+        <p>{{user33.PF_Sequence}}</p>
+<p>{{user33.PF_Card_Type}}</p>
+<p>{{user33.PF_Creditcard_No}}</p>
+<p>{{user33.PF_Expiration_Date}}</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- credit_card End -->
+  
+
+   <!-- fixex charges start -->
+   <div class="modal fade" id="fixed" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content" style="width:140%;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Fixed Charges</h4>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid" style="background-color: lightgray;">
+                  <div class="jumbotron" style="background-color:white; margin-top:30px;">
+        
+                  <label>Name</label> <label style="margin-left:320px;">Arrival</label>
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-user"></i></span>
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" 
+                  [(ngModel)]="fixed.name" />	
+                  </div>
+                  <div class="input-group" style="width:200px;margin-left:470px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-calendar"></i></span>
+                  <input type="date" class="form-control" placeholder="" aria-describedby="basic-addon1">		
+                  </div>	
+                  <br>
+                  <label>Nights</label> <label style="margin-left:312px;">Departure</label>
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-star"></i></span>
+                  <input type="text" class="form-control" placeholder=" Nights " aria-describedby="basic-addon1">		
+                  </div>
+                  <div class="input-group" style="width:200px;margin-left:470px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-calendar"></i></span>
+                  <input type="date" class="form-control" placeholder="" aria-describedby="basic-addon1">		
+                  </div>
+                  <legend style="margin-top:5px;"> </legend>
+                  <label>Begin Date</label> <label style="margin-left:285px;">End Date</label>
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-calendar"></i></span>
+                  <input type="date" class="form-control" placeholder="" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_Begin_Date">		
+                  </div>
+                  <div class="input-group" style="width:200px;margin-left:470px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-calendar"></i></span>
+                  <input type="date" class="form-control" placeholder="" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_End_Date">		
+                  </div>
+                  <br>
+                  <label>Trn.Code</label> 
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <select style="height:30px;width:350px;"[(ngModel)]="fixed.Fixed_Charges_Transaction_Code">
+                <option value="">Select Code</option>
+                <option value="saab">value1</option>
+                <option value="opel">value2</option>
+                <option value="audi">vaule3</option>
+                </select>	
+                  </div>
+                  <br>
+                  <label>Article Code</label> 
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <input type="text" class="form-control" placeholder="Article code" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_Article_Code">		
+                  </div>
+                  <br>
+                  <label>Amount</label> <label style="margin-left:330px;">Quantity</label>
+                  <div class="input-group" style="width:200px;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-usd"></i></span>
+                  <input type="text" class="form-control" placeholder="Amount" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_Amount">		
+                  </div>
+                  <div class="input-group" style="width:200px;margin-left:470px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-list"></i></span>
+                  <input type="text" class="form-control" placeholder="value" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_Quantity">		
+                  </div>
+                  <br>
+                  <label>Supplement</label> 
+                  <div class="input-group" style=" width:80%;margin-left:120px;margin-top:-35px;">
+                  <span class="input-group-addon" id="basic-addon1" style="background-color:lightgray;"><i class="glyphicon glyphicon-edit"></i></span>
+                  <input type="text" class="form-control" placeholder="content" aria-describedby="basic-addon1"[(ngModel)]="fixed.Fixed_Charges_Supplement">		
+                  </div>		
+                  <br>
+                  <legend style="margin-top:5px;"> </legend>
+                  <!-- <label class="checkbox-inline"  style="margin-left:20px;"> -->
+                       
+                        <!-- </label> -->
+                 
+                
+                  <span  *ngFor="let checkvalue of fixedcharge">
+                      <input type="checkbox"  (click)="checkboxfun(checkvalue)"
+                        [(ngModel)]="checkvalue.val"> 
+                       {{checkvalue.values}}</span>
+                  </div>
+                 </div>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="fix(fixed)" data-dismiss="modal"><b>Ok</b><span class="glyphicon glyphicon-ok" style="padding-left:5px;"></span></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+          </div>
+        </div>
+       
+      </div>
+   </div>
+     <!-- fixed charges End -->
+  
+
+     <!-- privileges start-->
+     <div class="modal fade" id="privileges" role="dialog">
+        <div class="modal-dialog"> 
+          <!-- Modal content-->
+          <div class="modal-content" style="width:150%;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Privileges</h4> 
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary" style="width:90%;height: 450px;margin-left: 20px;">
+                    <!-- <div class="panel-heading"><b></b> <span class="glyphicon glyphicon-remove" style="padding-left:590px;"></span></div> -->
+                    <div class="panel-body">
+                    <div class="jumbotron " style="width:680px;margin-left:15px;background-color:#0077B5;color:white;">
+                  <table>
+                  <tr *ngFor="let checkvalue of privil">
+                  <td style="padding-left:35px;">
+                    <input type="checkbox" style="width:20px;height:20px;" (click)="checkboxfun1(checkvalue1)" 
+                    [(ngModel)]="checkvalue.val"> 
+                    {{checkvalue.values}}
+                  </td>
+                  <!-- <td style="padding-left:15px;"><b>No Post</b></td>
+                  </tr>
+                  
+                  <tr>
+                  <td style="padding-left:35px;"><input type="checkbox" style="width:20px;height:20px;"[(ngModel)]="users.privileges_key"></td>
+                  <td style="padding-left:15px;"><b>Authorize Direct Bill</b></td>
+                  </tr>
+                  
+                  <tr>
+                  <td style="padding-left:35px;"><input type="checkbox" style="width:20px;height:20px;"[(ngModel)]="users.privileges_key"></td>
+                  <td style="padding-left:15px;"><b>Pre Stay  Charging</b></td>
+                  </tr>
+                  
+                  <tr>
+                  <td style="padding-left:35px;"><input type="checkbox" style="width:20px;height:20px;"[(ngModel)]="users.privileges_key"></td>
+                  <td style="padding-left:15px;"><b>Post Stay Charging</b></td> -->
+                  </tr>
+                  
+                  <tr>
+                  <td style="padding-left:15px;"><input type="time" style="border-radius:4px;color:black;"[(ngModel)]="privillege.privileges_key"></td>
+                  </tr>
+                  
+                  </table>
+                   </div>
+                 <br>
+                 <br>
+                   <button type="button" class="btn btn-success" style="margin-left: 500px;" (click)="submits(privillege)"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+                <button type="button" class="btn btn-danger"><b>Cancel</b><span class="glyphicon glyphicon-thumbs-down" style="padding-left:5px;"></span></button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>     
+            </div>
+                  </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+     <!-- privileges End--> 
+  
+  
+   
+  
+    <!-- rate info Start -->
+   <div class="modal fade" id="rate" role="dialog">
+      <div class="modal-dialog"> 
+        <!-- Modal content-->
+        <div class="modal-content" style="width:150%;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Rate Info</h4> 
+          </div>
+          <div class="modal-body">
+              <div class="panel panel-primary" style="width:96%;margin-left: 2%;height:700px;">
+                  <!-- <div class="panel-heading"><b></b><span class="glyphicon glyphicon-remove" style="padding-left:700px;"></span></div> -->
+                  <div class="panel-body">
+                  <table>
+                  <tr>
+                  <td><b>Currency</b></td>
+                  <td style="padding-left:20px;">
+                  <select id="curr" required style="height:30px;border-radius:4px;width:200px;background-color:#0077B5;color:white;">
+                <option value = "select1"> USD</option>
+                <option value = "Goa">USD</option>
+                <option value = "New Delhi">INR</option>
+                <option value = "Bangalore">POUND</option>
+                <option value = "Mumbai">EURO</option>
+                </select></td>
+                  </tr>
+                  </table><br>
+                  
+                   <table class="table table-bordered">
+                    <thead style="background-color:#0077B5;color:white;">
+                      <tr>
+                       
+                        <th colspan="2">Date</th>
+                        <th>Rate Code</th>
+                      <th>Room Revenue</th>
+                        <th>Packages</th>
+                        <th>Total</th>
+                    <th>Generates</th>
+                    <th>Grand Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Wed</td>
+                        <td><input type="date" style="border-radius:4px;background-color:#0077B5;color:white;"></td>
+                        <td>CORP</td>
+                      <td>250.00</td>
+                        <td>0.00</td>
+                        <td>250.00</td>
+                     <td>275.00</td>
+                      <td>275.00</td>
+                      </tr>
+                      <tr>
+                        <td>Thurs</td>
+                        <td><input type="date" style="border-radius:4px;background-color:#0077B5;color:white;"></td>
+                        <td>CORP</td>
+                      <td>250.00</td>
+                        <td>0.00</td>
+                        <td>250.00</td>
+                     <td>275.00</td>
+                      <td>275.00</td>
+                     
+                      </tr>
+                        <tr>
+                        <td>Fri</td>
+                        <td><input type="date" style="border-radius:4px;background-color:#0077B5;color:white;"></td>
+                        <td>CORP</td>
+                      <td>250.00</td>
+                        <td>0.00</td>
+                        <td>250.00</td>
+                     <td>275.00</td>
+                      <td>275.00</td>
+                      </tr>
+                    
+                    <tr style="height:40px;">
+                    <td></td>
+                     <td></td>
+                      <td></td>
+                     <td></td>
+                      <td></td>
+                       <td></td>
+                        <td></td>
+                      <td></td>
+                    </tr>
+                    <tr style="height:40px;">
+                    <td></td>
+                     <td></td>
+                      <td></td>
+                     <td></td>
+                      <td></td>
+                       <td></td>
+                        <td></td>
+                      <td></td>
+                    </tr>
+                    <tr style="height:40px;">
+                    <td></td>
+                     <td></td>
+                      <td></td>
+                     <td></td>
+                      <td></td>
+                       <td></td>
+                        <td></td>
+                      <td></td>
+                    </tr>
+                    <tr style="height:40px;">
+                    <td></td>
+                     <td></td>
+                      <td></td>
+                     <td></td>
+                      <td></td>
+                       <td></td>
+                        <td></td>
+                      <td></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <table>
+                  <tr>
+                  <td><b>Exchange Rate: 1.00</b></td>
+                  <td style="padding-left:330px;"><b>Total</b></td>
+                  <td style="padding-left:10px;"><input type="text" style="width:50px;border-radius:4px;"></td>
+                   <td style="padding-left:20px;"><b>Stay Total</b></td>
+                  <td style="padding-left:10px;"><input type="text" style="width:90px;border-radius:4px;"></td>
+                  </tr>
+                  </table><br>
+                  
+                  <table>
+                  <tr>
+                  <td>
+                  <textarea style="width:350px;height:80px;border-radius:4px;">
+                  Corporate Rate
+                  $10 flat off standard rate
+                  </textarea>
+                  </td>
+                  
+                  </tr>
+                  </table>
+                  
+                  </div>
+                </div>
+               
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary"><b>long details</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+              <button type="button" class="btn btn-info"><b>info</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  <!-- rate info End -->
+  
+  
+   <!-- room move -->
+   <div class="modal fade" id="room1" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:150%;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="jumbotron jumbotron-fluid" style="padding-top:20px;height:250px;background-color:#0077B5;color:white;">
+                  <table>
+                  <tr>
+                  
+                  <td><b>Date</b></td>
+                  <td>	<div class="input-group" >
+                  <!-- <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span> -->
+                  <input type="date" id="email" class="form-control"style="width:150px"></div></td>
+                  
+                  <td style="padding-left:20px;"><b>Days</b></td>
+                  <td style="padding-left:15px;">	<div class="input-group"style="width:80px">
+                  <!-- <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span> -->
+                  <input type="number" class="form-control"></div></td>
+                  
+                  <td style="padding-left:20px;"><b>Room Class</b></td>
+                  <td style="padding-left:15px;"><select id="curr" required style="width:80px;height:32px;border-radius:4px;color:black;">
+                  <option value = "select1"> </option>
+                  <option value = "Goa"></option>
+                  <option value = "New Delhi"></option>
+                  <option value = "Bangalore"></option>
+                  <option value = "Mumbai"></option>
+                  </select></td>
+                  
+                  <td style="padding-left:20px;"><b>Room Type</b></td>
+                  <td  style="padding-left:15px;"><select id="curr" required style="width:80px;height:32px;border-radius:4px;color:black;">
+                  <option value = "select1">SDBN </option>
+                  <option value = "Goa">KNGN</option>
+                  <option value = "New Delhi">KSBS</option>
+                  <option value = "Bangalore">PM</option>
+                  </select></td>
+                  
+                  
+                  </tr>
+                  
+                  <tr>
+                  <td style="padding-top:5px;"><b>Floor</b></td>
+                  <td  style="padding-top:5px;"><select id="curr" required style="width:150px;height:32px;border-radius:4px;color:black;">
+                  <option value = "select1">SDBN </option>
+                  <option value = "Goa">KNGN</option>
+                  <option value = "New Delhi">KSBS</option>
+                  <option value = "Bangalore">PM</option>
+                  </select></td>
+                  
+                  <td style="padding-top:5px;padding-left:20px;"><b>Smoking</b></td>
+                  <td  style="padding-left:15px;padding-top:5px;"><select id="curr" required style="width:80px;height:32px;border-radius:4px;color:black;">
+                  <option value = "select1">SDBN </option>
+                  <option value = "Goa">KNGN</option>
+                  <option value = "New Delhi">KSBS</option>
+                  <option value = "Bangalore">PM</option>
+                  </select></td>
+                  
+                  <td style="padding-top:5px;padding-left:20px;"><b>Features</b></td>
+                  <td  style="padding-left:15px;padding-top:5px;"><select id="curr" required style="width:80px;height:32px;border-radius:4px;color:black;">
+                  <option value = "select1">SDBN </option>
+                  <option value = "Goa">KNGN</option>
+                  <option value = "New Delhi">KSBS</option>
+                  <option value = "Bangalore">PM</option>
+                  </select></td>
+                  </tr>
+                  </table>
+                  
+                  <table>
+                  
+                  <tr>
+                  <td style="color:white;padding-top:15px;"><b>FO Status</b></td>
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;"><b>Due Out</b></td>
+                  
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;"><b>Checked Out</b></td>
+                  
+                  <td style="color:white;padding-top:15px;padding-left:10px;"><b>Room Status</b></td>
+                  <td style="padding-left:5px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:#d9534f;"><b>Dirty</b></td>
+                  
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:#5cb85c;"><b>Clean</b></td>
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:brown;"><b>Pick Up</b></td>
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:#5bc0de;"><b>Inspected</b></td>
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:#f0ad4e;"><b>Out Of Order</b></td>
+                  <td style="padding-left:10px;padding-top:15px;"><input type="checkbox"></td>
+                  <td style="padding-left:5px;padding-top:15px;color:#f0ad4e;"><b>Out Of Service</b></td>
+                  
+                  </tr>
+                  </table>
+                  
+                  <table>
+                  
+                  <tr>
+                  <td style="padding-left:300px;"><button type="button" class="btn btn-warning"><b>Search</b><span class="fa fa-search" style="padding-left:5px;"></span></button></td>
+                  </tr>
+                  
+                  </table>
+                
+                  </div>
+                  
+                  
+                  </div>
+                  
+                  <div class="container-fluid">
+                  <div class="jumbotron jumbotron-fluid" style="padding-top:20px;height:75px;background-color:#0077B5;color:white;">
+                  <table>
+                  <tr>
+                  <td><b>Description</b></td>
+                  <td style="padding-left:15px;">	<div class="input-group">
+                  <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <input type="text" id="email" class="form-control" value="Standard Double Beds Non-Smoking" style="width:600px;"></div></td>
+                  
+                  </tr>
+                  </table>
+                  
+                  
+                  </div>
+                  
+                  <div class="container-fluid" style="width:101%;padding-left:1px;">
+                  
+                   <table class="table table-bordered table-hover">
+                      <thead style="background-color:#0077B5;color:white;">
+                        <tr style="height:35px;">
+                          <th>Room</th>
+                          <th>Room Type</th>
+                          <th>HK Status</th>
+                      <th>FO</th>
+                          <th>Status</th>
+                          <th>Floor</th>
+                        <th>Features</th>
+                          <th>Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="height:35px;">
+                          <td>132</td>
+                          <td>SDBN</td>
+                          <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+                       <td>VAC</td>
+                          <td></td>
+                          <td>3rd Floor</td>
+                        <td>CR,LF,MB,NS</td>
+                          <td></td>
+                        </tr>
+                           <tr style="height:35px;">
+                          <td>133</td>
+                          <td>SDBN</td>
+                          <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+                       <td>VAC</td>
+                          <td></td>
+                          <td>High Floor</td>
+                        <td>CR,LF,MB,NS</td>
+                          <td></td>
+                        </tr>
+                          <tr style="height:35px;">
+                          <td>134</td>
+                          <td>SDBN</td>
+                          <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+                       <td>VAC</td>
+                          <td></td>
+                          <td>Low Floor</td>
+                        <td>CR,LF,MB,NS</td>
+                          <td></td>
+                        </tr>
+                         <tr style="height:35px;">
+                          <td>135</td>
+                          <td>SDBN</td>
+                          <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+                       <td>VAC</td>
+                          <td></td>
+                          <td>4th Floor</td>
+                        <td>CR,LF,MB,NS</td>
+                          <td></td>
+                        </tr>
+                      <tr style="height:35px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      </tr>
+                      
+                        <tr style="height:35px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      </tr>
+                        <tr style="height:35px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      </tr>
+                        <tr style="height:35px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      </tr>
+                    
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  </div>
+                  
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-success"><b>OK</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  <!-- Room Move end-->
+
+
+   <!-- room move -->
+   <div class="modal fade" id="room" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="width:150%;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="jumbotron jumbotron-fluid" style="padding-top:20px;height:auto;background-color:#0077B5;color:white;">
+                <br>
+                  <div class="row">
+              <div class="col-md-2"> <label><b> Move_To_Room </b></label></div>
+              <div class="col-md-6">   
+              <div class="input-group">
+                    <input type="text" name="First Name" class="form-control">
+                <span class="input-group-btn" >
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room1" data-dismiss="modal"><i class="glyphicon glyphicon-option-horizontal"></i></button>
+                </span>
+            </div>
+            </div>
+            <div class="col-md-4"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-2"> <label><b> Extension </b></label></div>
+                        <div class="col-md-6">   
+                        <div class="input-group">
+                              <input type="text" name="First Name" class="form-control">
+                          <span class="input-group-btn" >
+                              <button class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-download"></i></button>
+                          </span>
+                      </div>
+                      </div>
+                      <div class="col-md-4"></div>
+                              </div>                    
+                </div> 
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success"><b>OK</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" ><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!-- Room Move -->
+  
+     <!-- party Start-->
+     <div class="modal fade" id="party" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="width:140%;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <!-- <h4 class="modal-title">Modal Header</h4> -->
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="jumbotron " style="padding-top:25px;height:85px;width:99%;background-color:#0077B5;color:white;">
+                    <table>
+                    <tr>
+                         <td><b>Guest</b></td>
+                    <td style="padding-left:15px;">	<div class="input-group">
+                    <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" id="email" class="form-control" value="Wesh,Jim"></div></td>
+                    
+                    <td style="padding-left:100px;"><b>Party Name</b></td>
+                    <td style="padding-left:15px;">	<div class="input-group">
+                    <span class="input-group-addon" id="icon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" id="email" class="form-control"></div></td>
+                    </tr>
+                    </table>
+                    
+                    </div>
+                    
+                    </div>
+                    
+                    
+                    <div class="container">
+                         
+                      <table class="table table-bordered table-hover"style="width:70%;">
+                        <thead style="background-color:#0077B5;color:white;">
+                          <tr>
+                            <th><span class="glyphicon glyphicon-flash" style="padding-right:10px;"></span>Conf.No</th>
+                            <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Name</th>
+                            <th><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span>Room Type</th>
+                         <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Adults</th>
+                            <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Children</th>
+                            <th><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span>Room</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>11402</td>
+                            <td>Welsh,jim</td>
+                            <td>KNGN</td>
+                        <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                          </tr>
+                          <tr style="height:40px;">
+                           <td></td>
+                            <td></td>
+                            <td></td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr style="height:40px;">
+                           <td></td>
+                            <td></td>
+                            <td></td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        <tr style="height:40px;">
+                           <td></td>
+                            <td></td>
+                            <td></td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        <tr style="height:40px;">
+                           <td></td>
+                            <td></td>
+                            <td></td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr style="height:40px;">
+                           <td></td>
+                            <td></td>
+                            <td></td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table>
+                      <tr>
+                      <td>
+                         <td style="padding-left:40px;">
+                         <b>Total</b>
+                      </td>
+                      <td style="padding-left:15px;"><input type="number" min="1" max="100" style="width:160px;border-radius:4px;"></td>
+                       <td style="padding-left:15px;"><input type="number" min="1" max="100" style="width:190px;border-radius:4px;"></td>
+                        <td style="padding-left:25px;"><input type="number" min="1" max="100" style="width:145px;border-radius:4px;"></td>
+                      </tr>
+                      </table><br>
+                      <button type="button" class="btn btn-primary" style="margin-left: 100px;"><b>Split</b></button>
+                      <button type="button" class="btn btn-primary"><b>Split All</b></button>
+                       <button type="button" class="btn btn-primary"><b>Resv.</b></button>
+                      <button type="button" class="btn btn-primary"><b>Add to Party</b></button>
+                       <button type="button" class="btn btn-primary"><b>Chng.Party</b></button>
+                        <button type="button" class="btn btn-primary"><b>Detach</b></button>
+                        <br><br>
+                      
+                    </div>
+                    
+                    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    <!-- party End-->
+  
+       <!-- traces Start-->
+    <div class="modal fade" id="traces" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="width:155%;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Traces</h4> 
+            </div>
+            <div class="modal-body">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container-fluid" style="padding-left:50px;padding-right:50px;">
+                      <div class="jumbotron jumbotron-fluid" style="width:100%;padding-left:50px;padding-right:50px;padding-top:30px;height:350px;background-color:white;">
+                     <table class="table table-bordered table-hover">
+                        <thead style="background-color:#0077B5;color:white;">
+                          <tr>
+                            <th><span class="glyphicon glyphicon-user" style="padding-right:10px;"></span>Name</th>
+                            <th><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span>Room No.</th>
+                            <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Arrival</th>
+                        <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Departure</th>
+                            <th><span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody style="background-color:white;">
+                         
+                           <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                         <td>Doe</td>
+                            <td>john@example.com</td>
+                          </tr>
+                          <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                         <td>Doe</td>
+                            <td>john@example.com</td>
+                          </tr>
+                        <tr style="height:40px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       </tr>
+                       
+                        <tr style="height:40px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       </tr>
+                       
+                        </tbody>
+                      </table>
+                      <table>
+                      <tr><td style="padding-left:300px;"><button type="button" class="btn btn-warning"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button></td></tr>
+                      </table>
+                     </div>
+                     </div>
+                     
+                     <div class="container-fluid" style="padding-left:50px;padding-right:50px;">
+                     
+                     <div class="jumbotron jumbotron-fluid" style="padding-top:30px;height:290px;background-color:white;">
+                     <table>
+                     <tr>
+                     <td><b>From Date</b></td>
+                    <td style="padding-left:5px;">	<div class="input-group">
+                    <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="date" id="email" class="form-control"style="width:150px;" [(ngModel)]="trace.traces_from_date"></div></td>
+                    
+                     <td style="padding-left:30px;"><b>To Date</b></td>
+                    <td>	<div class="input-group">
+                    <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="date" id="email" class="form-control"style="width:150px;"  [(ngModel)]="trace.traces_to_date"></div></td>
+                    
+                     <td style="padding-left:30px;"><b>Time</b></td>
+                    <td>	<div class="input-group">
+                    <span class="input-group-addon" id="iccon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-time"></i></span>
+                    <input type="time" id="email" class="form-control"style="width:120px;"  [(ngModel)]="trace.traces_time"></div></td>
+                     
+                     </tr>
+                     </table>
+                     <table>
+                     <tr>
+                     <td style="padding-top:10px;"><b>Dept. Code</b></td>
+                     <td style="padding-left:14px;padding-top:10px;">
+                     <select id="curr" required style="width:550px;height:30px;border-radius:4px;"  [(ngModel)]="trace.traces_dept_code">
+                    <option value = "select1"> </option>
+                    <option value = "Goa">HSK</option>
+                    <option value = "New Delhi">HSK</option>
+                    </select></td>
+                     
+                     </tr>
+                     </table>
+                     
+                     <table>
+                     <tr>
+                     <td style="padding-top:10px;"><b>Trace Text</b>
+                     </td>
+                     <td style="padding-top:10px;padding-left:15px;">
+                     <textarea cols="70" rows="4" style="border-radius:4px;"  [(ngModel)]="trace.traces_trace_text">Requests Extra Pillow</textarea>
+                     </td>
+                     </tr>
+                     </table><br>
+                
+                     </div>
+                     </div> 
+                     </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"(click)="submittrace(trace)"  data-dismiss="modal"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+                <button type="button" class="btn btn-info"><b>Save</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+             <p>{{tracess.traces_from_date}}</p>
+             <p>{{tracesstraces_to_date}}</p>
+             <p>{{tracess.traces_time}}</p>
+             <p>{{tracess.traces_dept_code}}</p> 
+             <p>{{tracess.traces_trace_text}}</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+       <!-- traces End-->
+    
+   
+       <!-- Waitlist Start-->
+       <div class="modal fade" id="waitlist" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content" style="width:150%;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <div class="panel panel-primary" style="width:90%;margin-left: 5%; height: 400px;">
+  
+                  <div class="panel-body">
+                      <br>
+                      <table>
+                      <tr>
+                      <td><b>Reasons</b></td>
+                    <td style="padding-left:60px;"><select id="curr" required style="height:30px;border-radius:4px;width:240px;color:black;background-color:#0077B5;color:white;" [(ngModel)]="waitlist.RES_Waitlist_Reason">
+                    <option value = "">Select1</option>
+                    <option value = "Hotel Sold Out">Hotel Sold Out</option>
+                    <option value = "Out Of Service">Out Of Service</option>                   
+                    </select></td>
+                    </tr><br>
+                    <tr>
+                     <td><b>Priority</b></td>
+                    <td style="padding-left:60px;"> <input type="text" style="height:30px;border-radius:4px;width:240px;color:black;background-color:#0077B5;color:white;" [(ngModel)]="waitlist.RES_Waitlist_Priority"></td>
+                    
+                      </tr><br>
+                      <tr>
+                          <td><b>Telephone No.</b></td>
+                         <td style="padding-left:60px;"><input type="text" required style="height:30px;border-radius:4px;width:240px;" [(ngModel)]="waitlist.RES_Waitlist_Telephoneno"></td>
+                         
+                           </tr>
+                      </table><br><br>
+        
+
+                  <table>
+                  <tr>
+                  <td><b>Description</b></td>
+                  <td><textarea rows="5" cols="81" style="border-radius:8px;" [(ngModel)]="waitlist.RES_Waitlist_Description">
+                  Private Guest.Do not address guest by name.
+                </textarea></td>
+                  </tr>
+                  </table><br><br>
+                  
+                  
+                  
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <table>
+                  <tr>
+                 <td style="padding-left:65px;"> <button type="button" class="btn btn-success" (click)="submitwait(waitlist)"  data-dismiss="modal"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button></td>
+                 <p>{{waitlists.RES_Waitlist_Reason}}</p>
+                 <p>{{waitlists.RES_Waitlist_Priority}}</p>
+                 <p>{{waitlists.RES_Waitlist_Telephoneno}}</p>
+                 <p>{{waitlists.RES_Waitlist_Description}}</p>
+                <td style="padding-left:5px;"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button></td>
+              </tr>
+              </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+       <!-- Waitlist End-->
+      
+       <!-- caller info start-->
+       <div class="modal fade" id="call" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content" style="width:150%;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Alert</h4>
+              </div>
+              <div class="modal-body">
+                <div class="panel panel-primary" style="width:90%;margin-left: 5%; height: 400px;">
+                  <!-- <div class="panel-heading"><b></b> <span class="glyphicon glyphicon-remove" style="padding-left:590px;"></span></div> -->
+                  <div class="panel-body">
+                    <br>
+                    <div class="table-responsive">
+                      <table class=" table table-hover table-striped table-bordered">
+                        <thead style="background-color:#0077B5;color:white;">
+                          <tr>
+                            <th> </th>
+                            <th><i class="glyphicon glyphicon-user"></i> Name </th>
+                            <th><i class="glyphicon glyphicon-time"></i> Call_Begin </th>
+                            <th><i class="glyphicon glyphicon-time"></i> Call_End </th>
+                            <th><i class="glyphicon glyphicon-phone"></i> Phone </th>
+                            <th><i class="glyphicon glyphicon-fax"></i> Fax </th>
+                            <th><i class="glyphicon glyphicon-envelope"></i> Email </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> <input type="checkbox"></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                          <tr>
+                              <td> <input type="checkbox"></td>
+                              <td> </td>
+                              <td> </td>
+                              <td> </td>
+                              <td> </td>
+                              <td> </td>
+                              <td> </td>
+                            </tr>
+                          <tr>
+                            <td> <input type="checkbox"></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                          <tr>
+                            <td> <input type="checkbox"></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                            <tr>
+                            <td> <input type="checkbox"></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+    
+                   <button type="button" class="btn btn-success"style="margin-left: 70%;"><b>Ok</b><span class="glyphicon glyphicon-thumbs-up" style="padding-left:5px;"></span></button>
+                 <button type="button" class="btn btn-danger" style="padding-left:5px;"data-dismiss="modal"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+    
+              </div>
+            </div>
+            
+          </div>
+        </div> 
+        <!-- caller info End -->     
+  
+  <div class="container-fluid">
+  
+    <div class="row">
+  
+      <!--alert-->   
+   <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body" data-toggle="modal" data-target="#alert">
+    <div class="text-center">  
+    <img src="assets/images/bell.png" alt="change" style="border-radius:50%;border:solid 10px lightgray;">
+   </div>
+    <h4  align="center">Alert</h4>
+    <p  align="center"><small>Reservation Alert!</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Admin Alert!</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Reservation Alert!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+    
+  <!--Changes-->   
+   <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body" data-toggle="modal" data-target="#changes">
+  <div class="text-center">  
+  <img src="assets/images/changes.jpg" alt="change" style="border-radius:50%;">
+  </div>
+  <h4  align="center">Changes</h4>
+  <p  align="center"><small>Change Options</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Change Reservation</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Change Reservation Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body" data-toggle="modal" data-target="#confirm">
+    <div class="text-center">    
+    <img src="assets/images/images.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+    </div>
+    <h4  align="center"> Confirmation</h4>
+    <p align="center"><small> Reservation_Confirmation</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reservation Confirmation Mail</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Confirmation Alert!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+  
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+    <div class="panel-body"  data-toggle="modal" data-target="#credit">
+    <div class="text-center">      
+    <img src="assets/images/credit_card.png" alt="alert" style="border-radius:50%;border:solid 8px lightgray ;">
+    </div>
+    <h4  align="center">Credit Card</h4>
+    <p  align="center"><small>Accept All Credit Cards</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style=" margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reservation Card Details</small></p>
+    <p style=" margin-top:-10px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reservation Card Request!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+  
+  
+      <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+      <div class="panel">
+      <div class="panel-body">
+      <div class="text-center">    
+      <img src="assets/images/delete-300x300.jpg" alt="change" style="border-radius:50%;border:solid 10px lightgray ;">
+      </div>
+      <h4  align="center"> Delete</h4>
+      <p align="center"><small> Delete Reservation </small></p>
+      </div>
+      <div class="panel-footer">
+      <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Reservation Delete Details</small></p>
+      <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Delete Alert!</small></p>
+      </div>
+      </div>
+      </div><!-- column 1 for 1 row -->
+  
+      <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+        <div class="panel">
+        <div class="panel-body" data-toggle="modal" data-target="#fixed">
+        <div class="text-center">
+        <img src="assets/images/FixedDeposit-icon.jpg" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+        </div>
+        <h4 align="center"> Fixed Charges</h4>
+        <p align="center"><small> Fixed Charges Details </small></p>
+        </div>
+        <div class="panel-footer">
+        <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Fixed Charges Mail</small></p>
+        <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Charges Alert!</small></p>
+        </div>
+        </div>
+        </div><!-- column 1 for 1 row -->
+        
+  </div><!--End of row-->
+  <br>
+  <div class="row">
+  <!--Changes-->   
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body">
+    <div class="text-center">
+    <img src="assets/images/plan-option-offer-package-service-hand-512.png" alt="change" style="border-radius:50%;border:solid 10px lightgray;">
+    </div>
+    <h4  align="center">Package_Option</h4>
+    <p  align="center"><small>Room package service</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> packages Alerts!</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Available Room packages</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+    
+   
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body" data-toggle="modal" data-target="#privileges">
+  <div class="text-center">
+  <img src="assets/images/badges_dd_console_stage2.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+  </div>
+  <h4  align="center">Privileges</h4>
+  <p align="center"><small>Change Privileges needs</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Privileges Alert!</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Change Room</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body">
+  <div class="text-center">
+  <img src="assets/images/icona-guest-card.png" alt="alert" style="border-radius:50%; border:solid 8px lightgray ;">
+  </div>
+  <h4  align="center">Register card</h4>
+  <p align="center"><small>Confirmation for room</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style=" margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reserve Conform Mail</small></p>
+  <p style=" margin-top:-10px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Confirmation Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body">
+  <div class="text-center">
+  <img src="assets/images/800px_COLOURBOX11070120.jpg" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+  </div>
+  <h4 align="center"> Queue </h4>
+  <p align="center"><small>Reservation Queue</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reserve Queue list</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Queue Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+    <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body" data-toggle="modal" data-target="#rate">
+    <div class="text-center">
+    <img src="assets/images/information-icon.png" alt="change" style="border-radius:50%; border:solid 8px lightgray;">
+    </div>
+    <h4 align="center"> Rate Info</h4>
+    <p align="center"><small> Room Rate Information </small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Rate Info Mail</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Info Alert!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+  
+    <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+      <div class="panel">
+      <div class="panel-body" data-toggle="modal" data-target="#room">
+      <div class="text-center">
+      <img src="assets/images/images1.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+      </div>
+      <h4 align="center">Room Move</h4>
+      <p align="center"><small>Room Change</small></p>
+      </div>
+      <div class="panel-footer">
+      <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Room change Request</small></p>
+      <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Change Alert!</small></p>
+      </div>
+      </div>
+      </div><!-- column 1 for 1 row -->
+      
+  </div>
+    <!--<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>-->
+    <br>
+  <div class="row">
+  <!--Changes-->   
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body">
+    <div class="text-center">  
+    <img src="assets/images/images2.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+    </div>
+    <h4  align="center">Routing</h4>
+    <p  align="center"><small>Give some alert to Admin</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Email Alerts</small></p>
+    <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Customer Alerts</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+    
+   
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body" data-toggle="modal" data-target="#party">
+  <div class="text-center">  
+  <img src="assets/images/Party.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+  </div>
+  <h4  align="center">Party</h4>
+  <p align="center"><small>Change customer needs</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Change Email</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px"><small><i class="fa fa-hand-o-right"></i> Change Room</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body"  data-toggle="modal" data-target="#traces">
+  <div class="text-center">
+  <img src="assets/images/FindaJob_Icon.png" alt="alert" style="border-radius:50%; border:solid 8px lightgray ;">
+  </div>
+  <h4  align="center"> Traces </h4>
+  <p align="center"><small>Traces Dirty Room</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style=" margin-top: 5px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Traces for check-in</small></p>
+  <p style=" margin-top:-10px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Traces Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+  <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+  <div class="panel">
+  <div class="panel-body" data-toggle="modal" data-target="#waitlist">
+  <div class="text-center">
+  <img src="assets/images/waitlist-icon.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+  </div>
+  <h4 align="center">Waitlists</h4>
+  <p align="center"><small>Customer in waitlist</small></p>
+  </div>
+  <div class="panel-footer">
+  <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Reservation Waitlist</small></p>
+  <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Waitlist Alert!</small></p>
+  </div>
+  </div>
+  </div><!-- column 1 for 1 row -->
+  
+    <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+    <div class="panel">
+    <div class="panel-body">
+    <div class="text-center">
+    <img src="assets/images/BILLING.png" alt="change" style="border-radius:50%; border:solid 8px lightgray;">
+    </div>
+    <h4 align="center"> Billing</h4>
+    <p align="center"><small>Billing Confirmation</small></p>
+    </div>
+    <div class="panel-footer">
+    <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Conform Billing Mail </small></p>
+    <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i>  Billing Alert!!</small></p>
+    </div>
+    </div>
+    </div><!-- column 1 for 1 row -->
+  
+    <div class="col-md-2 col-sm-2 col-lg-2 col-xl-2">
+      <div class="panel">
+      <div class="panel-body" data-toggle="modal" data-target="#call">
+      <div class="text-center">
+      <img src="assets/images/unnamed.png" alt="change" style="border-radius:50%; border:solid 10px lightgray;">
+      </div>
+      <h4 align="center">Caller Info</h4>
+      <p align="center"><small> Details of caller </small></p>
+      </div>
+      <div class="panel-footer">
+      <p style="margin-top: 5px;margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Caller Type</small></p>
+      <p style=" margin-top:-10px; margin-left: 20px;"><small><i class="fa fa-hand-o-right"></i> Caller Alert!</small></p>
+      </div>
+      </div>
+      </div><!-- column 1 for 1 row -->
+      
+  </div>
+    
+  
+    
+  </div><!-- container End-->

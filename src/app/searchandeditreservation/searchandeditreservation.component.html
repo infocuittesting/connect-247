@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Our Custom CSS -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <div class="container" style="padding-top:40px;">
+  <div class="jumbotron" style="padding-top:10px;background-color:#0077B5;color:white;padding-bottom:20px;">
+   <div class="row">
+
+      <div class="col-sm-4">
+         <b> Last Name</b> <div class="input-group">
+              <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" id="name" class="form-control" [(ngModel)]="queryString"></div>
+      </div>
+
+      <div class="col-sm-4">
+
+          <b>Last Name</b> <div class="input-group">
+              <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" id="name" class="form-control"[(ngModel)]="query"></div>
+      </div>
+	  
+      <div class="col-lg-4">    
+        <b>Source</b> <div class="input-group">
+            <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+            <input type="text" id="name" class="form-control" [(ngModel)]="qsource"></div>
+    </div>
+  
+        </div>
+
+        <div class="row" style="padding-top:10px;">
+
+            <div class="col-lg-4">
+                <b>Contact</b> <div class="input-group">
+                     <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-phone"></i></span>
+                     <input type="text" class="form-control"></div>
+             </div>
+
+      <div class="col-lg-4">
+          <b>Arrival From</b> <div class="input-group">
+               <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+               <input type="date" class="form-control"[(ngModel)]="startDate"></div>
+       </div>
+ 
+       <div class="col-lg-4">
+ 
+           <b>Arrival To</b> <div class="input-group">
+               <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-calendar"></i></span>
+               <input type="date" class="form-control"[(ngModel)]="endDate"></div>
+       </div>
+	  
+
+    
+
+        </div>
+
+
+        <div class="row" style="padding-top:10px;">
+
+          <div class="col-lg-4">
+            <b>Group</b> <div class="input-group">
+                 <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+                 <input type="text" id="name" class="form-control"></div>
+         </div>
+         <div class="col-sm-4">
+          <b>Company</b> <div class="input-group">
+            <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" id="name" class="form-control"></div>
+
+        </div>
+
+            <div class="col-lg-4">
+                  <b>Agent</b> <div class="input-group">
+                    <span class="input-group-addon" style="background-color:#0077B5;color:white;"><i class="glyphicon glyphicon-edit"></i></span>
+                    <input type="text" id="name" class="form-control"></div>
+      
+                </div>
+          
+      
+              </div>
+
+    
+              
+
+<br>
+	     <div class="row">
+
+          <div class="col-lg-3">
+            </div>
+          <div class="col-lg-2">
+              <button type="button" class="btn btn-info" style="width:100%;"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+           </div>
+
+            <div class="col-lg-2">
+                 <button type="button" class="btn btn-success" routerLink="/advancedsearch" style="width:100%;"><b>Advanced</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+            </div>
+
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-warning" style="width:100%;"><b>Clear</b><span class="glyphicon glyphicon-trash" style="padding-left:5px;"></span></button>
+            </div>            
+
+           <div class="col-lg-3">
+            </div>
+       </div>
+
+  </div>
+
+  </div>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead >
+            <tr class="table table-primary" style="background-color: #0077B5;color: white ">
+                  <th> </th>                        
+                  <th><span><i class="fa fa-user"></i></span> Name</th>
+                  <th><span><i class="fa fa-cube"></i></span> Room</th>
+                  <th><span><i class="fa fa-edit"></i></span> Extension</th>
+                  <th><span><i class="fa fa-cubes"></i></span> Room_Type</th>
+                  <th><span><i class="fa fa-calendar"></i></span> Arrival</th>
+                  <th><span><i class="fa fa-calendar"></i></span> Departure</th>
+                  <th><span><i class="fa fa-moon-o"></i></span> Nights</th>
+                  <th><span><i class="fa fa-star"></i></span> Status</th>
+                  <th><span><i class="fa fa-group"></i></span> Group</th>
+                  <th><span><i class="fa fa-users"></i></span> Adults</th>                        
+                  <th><span><i class="fa fa-user"></i></span> Child</th>
+                  <th><span><i class="fa fa-money"></i></span> Rate_Code</th>
+                  <th><span><i class="fa fa-money"></i></span> Rate</th>
+                  <th><span><i class="fa fa-group"></i></span> Block_Code</th>
+                  <th><span><i class="fa fa-cubes"></i></span> Packages</th>
+                  <th><span><i class="fa fa-money"></i></span> Rtc</th>
+                  <th><span><i class="fa fa-money"></i></span> Currency</th>
+                  <th><span><i class="fa fa-pencil-square-o"></i></span> ETA</th>
+                  <th><span><i class="fa fa-info"></i></span> Resv_Type</th>
+                  <th><span><i class="fa fa-shopping-cart"></i></span> Market</th>
+                  <th><span><i class="fa fa-share-square"></i></span> Source</th>            
+                  <th><span><i class="fa fa-share-square"></i></span> Origin</th>            
+                  <th><span><i class="fa fa-money"></i></span> Payment</th>            
+                  <th><span><i class="fa fa-credit-card"></i></span> CreditCard_Number</th>            
+                  <th><span><i class="fa fa-credit-card"></i></span> Exp_Date</th>            
+                  <th><span><i class="fa fa-credit-card"></i></span> Guest_Balance</th>            
+                  <th><span><i class="fa fa-cutlery"></i></span> Disc_Amount</th>            
+                  <th><span><i class="fa fa-cutlery"></i></span> Disc_perc</th>  
+                  <th><span><i class="fa fa-cutlery"></i></span> Disc_Reason</th>            
+                  <th><span><i class="fa fa-cutlery"></i></span> Specilals</th>            
+                  <th><span><i class="fa fa-comments"></i></span> Comments</th>            
+                  <th><span><i class="fa fa-sitemap"></i></span> Item_Inv</th>            
+                            
+                </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let searched of searchandedit | filterdata: queryString :'pf_firstname'|filterdata: query :'pf_firstname'|filterdata: qsource :'res_source'| filterdata: startDate:'res_arrival'| filterdata: endDate:'res_arrival'; let i = index">
+            <td>{{i+1}}</td> 
+            <td>  {{searched.pf_firstname}}</td>
+            <td> {{searched.res_room}} </td>
+            <td> {{searched.res_extension}} </td>
+            <td> {{searched.res_room_type}} </td>
+            <td> {{searched.res_arrival}} </td> 
+            <td> {{searched.res_depature}} </td>
+            <td> {{searched.res_nights}} </td>
+            <td> {{searched.res_guest_status}} </td>
+            <td></td>     
+            <td> {{searched.res_adults}}</td> 
+            <td> {{searched.res_child}}</td>     
+            <td> {{searched.res_rate_code}}</td>     
+            <td> {{searched.res_rate}}</td>     
+            <td> {{searched.res_block_code}}</td> 
+            <td> {{searched.res_packages}}</td>     
+            <td> {{searched.res_rtc}}</td>     
+            <td> {{searched.res_currency}}</td>     
+            <td> {{searched.res_eta}}</td>
+            <td> {{searched.res_res_type}}</td>     
+            <td> {{searched.res_market}}</td> 
+            <td> {{searched.res_source}}</td>     
+            <td> {{searched.res_origin}}</td>     
+            <td> {{searched.res_payment}}</td>     
+            <td> {{searched.res_creditcard_number}}</td>     
+            <td> {{searched.res_exp_date}}</td>     
+            <td> {{searched.res_guest_balance}}</td>     
+            <td> {{searched.res_disc_amount}}</td>     
+            <td> {{searched.res_disc_perc}}</td>
+            <td> {{searched.res_disc_reason}}</td>     
+            <td> {{searched.res_specials}}</td>     
+            <td> {{searched.res_comments}}</td>     
+            <td> {{searched.res_item_inv}}</td>
+          </tr>
+                <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                   
+               </tr>
+               <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                             
+               </tr>
+               <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                             
+               </tr>
+               <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>          
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                        
+               </tr>
+               <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                            
+               </tr>
+               <tr>
+                  <td><input type="checkbox" ></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>          
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td> 
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>
+                  <td></td>     
+                  <td></td>     
+                  <td></td>     
+                  <td></td>                          
+               </tr>                                                                                                                
+        </tbody>
+      </table>
+      </div>
+  </div>
+  <br>
+  <div class="container">
+   <div class="row">
+     
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-primary"routerLink="/reservation" style="width:100%"><b>New</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+        </div>
+          
+          <div class="col-lg-2">
+              <button type="button" class="btn btn-danger"  style="width:100%"><b>Cancel</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+            </div>
+
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-primary"routerLink="/psearch" style="width:100%"><b>Profile</b><span class="glyphicon glyphicon-user" style="padding-left:5px;"></span></button>
+              </div>
+
+              <div class="col-lg-2">
+                  <button routerLink="/reservationoption" class="btn btn-info"  style="width:100%"><b>Options</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+                </div>
+
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-success" style="width:100%"><b>Edit</b><span class="glyphicon glyphicon-edit" style="padding-left:5px;"></span></button>
+                  </div>
+
+                  <div class="col-lg-2">
+                      <button type="button" class="btn btn-danger" routerLink="/mains"  style="width:100%"><b>Close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+                    </div>  
+            
+
+   </div>
+  <br>
+  </div>
+
+</body>
+</html>

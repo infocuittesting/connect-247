@@ -1,0 +1,223 @@
+<div class="row" style="width:99%">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+      <br>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-color: #0077B5;color: white; ">
+      <div class="row">
+          <div class="col-md-4">
+                  <div class="row">
+                  <div class="col-md-4">    
+              <form class="form-inline" action="/action_page.php">
+                  <label for="email">First Name:</label>
+                  </form>
+              </div>   
+                  <div class="col-md-6">    
+              <form class="form-inline" action="/action_page.php">
+                  <input type="text" class="form-control" id="name" [(ngModel)]="queryString" placeholder="Enter First Name" name="name">
+                  </form>
+              </div>
+  
+              </div>
+          </div>
+
+       <div class="col-md-4">
+               <div class="row">
+                  <div class="col-md-4">    
+                      <form class="form-inline" action="/action_page.php">
+                      <label for="email">Last Name:</label>
+                       </form>
+                 </div>   
+      
+               <div class="col-md-6">    
+                      <form class="form-inline" action="/action_page.php">
+                       <input type="text" class="form-control" id="email" placeholder="Enter Last Name" name="email">
+                       </form>
+              </div>
+
+              </div>
+          </div>
+
+          <div class="col-md-4">
+                      <div class="row">
+                         <div class="col-md-4">    
+                             <form class="form-inline" action="/action_page.php">
+                             <label for="email">Room_Type:</label>
+                              </form>
+                        </div>   
+                      
+                      <div class="col-md-6">    
+                             <form class="form-inline" action="/action_page.php">
+                              <input type="text" class="form-control" id="email" placeholder="Enter  Room_Type" name="email">
+                              </form>
+                     </div>
+     
+                     </div>
+                 </div>
+          
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+                <div class="row">
+                <div class="col-md-4">    
+            <form class="form-inline" action="/action_page.php">
+                <label for="email">Room:</label>
+                </form>
+            </div>   
+                <div class="col-md-6">    
+            <form class="form-inline" action="/action_page.php">
+                <input type="text" class="form-control" id="email" placeholder="Enter Room" name="email">
+                </form>
+            </div>
+
+            </div>
+        </div>
+
+     <div class="col-md-4">
+             <div class="row">
+                <div class="col-md-4">    
+                    <form class="form-inline" action="/action_page.php">
+                    <label for="email">Room_Class:</label>
+                     </form>
+               </div>   
+    
+             <div class="col-md-6">    
+                    <form class="form-inline" action="/action_page.php">
+                     <input type="text" class="form-control" id="email" placeholder="Enter Room_Class" name="email">
+                     </form>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+                <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6">
+                <button class="btn btn-info" style="width: 100%">Search <i class="fa fa-search"></i></button>   
+              </div>
+             </div></div>
+    </div>     
+</div>
+
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover" >
+  <thead>
+      <tr class="table table-primary"style="background-color: #0077B5;color:white; ">
+          <th> </th>
+          <th><span><i class="fa fa-user"></i></span> Name</th>
+          <th><span><i class="fa fa-clock-o"></i></span> Q-Time</th>
+          <th><span><i class="fa fa-pencil"></i></span> Queue</th>
+          <th><span><i class="fa fa-calendar"></i></span> Queue_Date</th>
+          <th><span><i class="fa fa-phone"></i></span> Mobile_No</th>
+          <th><span><i class="fa fa-cube"></i></span> Room</th>
+          <th><span><i class="fa fa-cubes"></i></span> Room_Type</th>
+          <th><span><i class="fa fa-cc"></i></span> Room_Class</th>
+          <th><span><i class="fa fa-tasks"></i></span> FO_Status</th>
+          <th><span><i class="fa fa-star"></i></span> Room_Status</th>
+          <th><span><i class="fa fa-bars"></i></span> VIP</th>
+      </tr>
+  </thead>
+  <tbody style="overflow-y: auto;height: 300px;position:relative;">
+
+          <tr *ngFor="let checkin of search | filterdata: queryString :'pf_firstname'; let i = index">
+            <td>  {{i+1}}</td>     
+            <td>  {{checkin.pf_firstname}}</td>     
+            <td>  {{checkin.rm_qtime}}</td>     
+            <td>  {{checkin.rm_queue}}</td>     
+            <td>  {{checkin.rm_queue_date}}</td>     
+            <td>  {{checkin.pf_mobileno}}</td>     
+            <td>  {{checkin.rm_room}}</td>     
+            <td>  {{checkin.rm_room_type}}</td>     
+            <td>  {{checkin.rm_room_class}}</td>     
+            <td>  {{checkin.rm_fo_status}}</td>     
+            <td>  {{checkin.rm_room_status}}</td>     
+            <td>  {{checkin.rm_vip}}</td>                        
+         </tr>
+              <tr>
+            <td> <input type="checkbox"></td>      
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>
+             <td></td>     
+             <td></td>     
+             <td></td>                        
+          </tr>
+              <tr>
+            <td> <input type="checkbox"></td>      
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>
+             <td></td>     
+             <td></td>     
+             <td></td>                        
+          </tr>
+              <tr>
+             <td> <input type="checkbox"></td>          
+             <td></td>     
+             <td></td> 
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>
+             <td></td>     
+             <td></td>     
+             <td></td>                             
+          </tr>
+              <tr>
+            <td> <input type="checkbox"></td>      
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>     
+             <td></td>
+             <td></td>     
+             <td></td>     
+             <td></td>                        
+          </tr>                                                            
+  </tbody>
+</table>
+</div>
+<br>
+
+<div>
+  <button class="btn btn-info" style="width:10%; margin-left:7%;"(click)="subm(checkin)"> Check In <i class="fa fa-sign-in"></i></button>    
+  <button class="btn btn-default disabled"style="width:10%">Priority <i class="fa fa-square"></i> </button>    
+  <button class="btn btn-warning" style="width:14%" routerLink="/reservation">Resv <i class="fa fa-tasks"></i></button>   
+  <button class="btn btn-default disabled" style="width:10%">Details <i class="fa fa-credit-card"></i></button>   
+  <button class="btn btn-info" style="width:10%"> Statistics <i class="fa fa-user"></i></button>   
+  <button class="btn btn-primary" style="width:10%"> Report <i class="fa fa-caret-square-o-down"></i></button>     
+  <button class="btn btn-danger" style="width:10%"> Close <i class="fa fa-close"></i></button>   
+  <p>{{checkin1.RM_Qtime}}</p>
+  <p>{{checkin1.RM_Room}}</p>
+  <p>{{checkin1.RM_Room_Type}}</p>
+  <p>{{checkin1.RM_Room_Status}}</p>
+  <p>{{checkin1.RM_FO_Status}}</p>
+  <p>{{checkin1.PF_Firstname}}</p>
+  <p>{{checkin1.RM_VIP}}</p>
+  <p>{{checkin1.RM_Room_Class}}</p>
+  </div>
+
+
+</div>
+</div>
+
+
+<!---managing the queue-->

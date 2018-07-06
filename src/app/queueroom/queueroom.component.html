@@ -1,0 +1,301 @@
+
+<div class="container" style="padding-top:40px;">
+  <div class="jumbotron jumbotron-fluid" style="padding-top:20px;background-color:#0077B5;color:white;">
+  <div class="row">
+
+    <div class="col-lg-2">
+      <b>Room Type</b>
+    </div>
+
+    <div class="col-lg-2">
+        <select  required style="height:34px;color:black;border-radius:4px;width:100%;color:black;">
+            <option value = "KNGN">KNGN</option>
+            <option value = "KNGS">KNGS</option>
+            <option value = "KEXN">KEXN</option>
+            <option value = "KSGS">KSGS</option>
+            <option value = "KSBS">KSBS</option>
+            <option value = "SJSS">SJSS</option>
+            </select>
+    </div>
+
+    <div class="col-lg-2">
+        <b>Room</b>
+      </div>
+
+      <div class="col-lg-2">
+          <select  required style="height:34px;color:black;border-radius:4px;width:100%;color:black;">
+              <option value = "101">101</option>
+              <option value = "102">102</option>
+              <option value = "103">103</option>
+              <option value = "104">104</option>
+              <option value = "105">105</option>
+              <option value = "106">106</option>
+              </select>
+      </div>
+
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <button type="button" class="btn btn-warning"><b>Search</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+      </div>
+
+  </div>
+
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><b>Average Time in Queue</b></div>
+        <div class="panel-body">
+<div class="row">
+
+  <div class="col-lg-1">
+    <b>Current</b>
+  </div>
+  <div class="col-lg-1">
+     <input type="text">
+    </div>
+<div class="col-lg-3">
+
+</div>
+     <div class="col-lg-1">
+        <b>Actual</b>
+        </div>
+      <div class="col-lg-1">
+         <input type="text">
+        </div>
+    
+
+</div>
+
+        </div>
+      </div>
+      </div>
+
+      <div class="col-lg-2" style="padding-top:3%;">
+        <b>Total Rooms in Queue</b>
+      </div>
+
+      <div class="col-lg-2" style="padding-top:3%;">
+        <input type="text">
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-8">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="height:40px;"></div>
+            <div class="panel-body">
+               
+    <table class="table table-bordered table-responsive table-hover">
+        <thead style="background-color:#0077B5;color:white;">
+          <tr>
+            <th>X</th>
+            <th>Q-time</th>
+            <th>Room</th>
+            <th>Room Type</th>
+            <th>Room Status</th>
+            <th>FO status</th>
+           <th>Name</th>
+            <th>VIP</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>Doe</td>
+            <td>101</td>
+           <td>SDBN</td>
+           <td  class="select" style="background-color:#5cb85c;color:white;">
+                    <select style="width:135px;height:20px;border-radius:4px;background-color:#5cb85c;color:black;">        
+                        <option value="Inspected" style="color:white;"><b >Inspected</b></option>
+                        <option value="Dirty">Dirty</option>
+                        <option value="Clean">Clean</option>
+                        <option value="Pick up">Pick up</option>
+                        <option value="Out of Order">Out of Order</option>
+                        <option value="Out of Service">Out of Service</option>
+                </select></td>
+        
+          
+            <td>OCC</td>
+            <td>Not Reserved</td>
+            <td>Low Floor</td>
+           
+            
+          </tr>
+          <tr>
+              <td><input type="checkbox"></td>
+              <td>Doe</td>
+              <td>102</td>
+              <td>SJSN</td>
+              <td style="background-color:#d9534f;color:white;"><b>Dirty</b></td>
+                <td>OCC</td>
+              <td>Not Reserved</td>
+              <td>Low Floor</td>
+              
+             
+          </tr>
+  
+          <tr>
+              <td><input type="checkbox"></td>
+              <td>Doe</td>
+              <td>103</td>
+              <td>KSBN</td>
+              <td style="background-color:#5bc0de;color:white;"><b>Pick Up</b></td>
+              <td>VAC</td>
+              <td>Arrival</td>
+              <td>Low Floor</td>
+             
+             
+          </tr>
+          <tr>
+              <td><input type="checkbox"></td>
+              <td>Doe</td>
+              <td>104</td>
+              <td>KSBS</td>
+              <td style="background-color:#d9534f;color:white;"><b>Out of Order</b></td>
+              <td>VAC</td>
+              <td>Due Out</td>
+              <td>Low Floor</td>
+              
+             
+          </tr>
+  
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>Doe</td>
+             <td>105</td>
+             <td>KNGN</td>
+              <td style="background-color:#d9534f;color:white;"><b>Out of Service</b></td>
+              <td>OCC</td>
+              <td>Johnson Daniel</td>
+              <td>Low Floor</td>
+              
+              
+          </tr>
+  
+          <tr>
+              <td><input type="checkbox"></td>
+              <td>Doe</td>
+              <td>106</td>
+              <td>KSGS</td>
+              <td style="background-color:#5cb85c;color:white;"><b>Inspected</b></td>
+              <td>VAC</td>
+              <td>Stay Over</td>
+              <td>Low Floor</td>
+            
+             
+          </tr>
+        </tbody>
+      </table>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Over View</b></div>
+            <div class="panel-body">
+                <table class="table table-bordered table-responsive table-hover">
+                    <thead style="background-color:#0077B5;color:white;">
+                      <tr>
+                        <th>Room Type</th>
+                        <th>Total</th>
+                        
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                       
+                        <td>KNGN</td>
+                        <td>1</td>
+                       
+                        
+                      </tr>
+                      <tr>
+                         
+                          <td>KNGS</td>
+                          <td>1</td>
+                          
+                         
+                      </tr>
+              
+                      <tr>
+                          <td>KNGN</td>
+                        <td>1</td>
+                         
+                         
+                      </tr>
+                      <tr>
+                         
+                          <td>KNGN</td>
+                        <td>1</td>
+                          
+                         
+                      </tr>
+              
+                      <tr>
+                        
+                          <td>KNGN</td>
+                        <td>1</td>
+                          
+                          
+                      </tr>
+              
+                      <tr>
+                        
+                          <td>KNGN</td>
+                          <td>1</td>
+                         
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+
+      </div>
+
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1">
+
+    </div>
+
+    <div class="col-lg-2">
+<button type="button" class="btn btn-primary" style="width:100%;"><b>Statistics</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+      </div>
+      <div class="col-lg-2">
+          <button type="button" class="btn btn-info" style="width:100%;"><b>Details</b><span class="glyphicon glyphicon-file" style="padding-left:5px;"></span></button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-success" style="width:100%;"><b>Resv.</b><span class="glyphicon glyphicon-home" style="padding-left:5px;"></span></button>
+          </div>
+          <div class="col-lg-2">
+              <button type="button" class="btn btn-warning" style="width:100%;"><b>Report</b><span class="glyphicon glyphicon-search" style="padding-left:5px;"></span></button>
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-danger" style="width:100%;"><b>close</b><span class="glyphicon glyphicon-remove" style="padding-left:5px;"></span></button>
+              </div>
+
+    <div class="col-lg-1">
+
+      </div>
+  </div>
+
+</div>

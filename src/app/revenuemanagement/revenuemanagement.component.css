@@ -1,0 +1,35 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+  .mat-input-underline{
+    background: black !important;
+  }
+  .date-card{
+    max-width: 100%;
+    margin-top: 5px;
+    min-height: 39%;
+  }
+  
+  .amount-card-content{
+    width: 15%;
+  }
+  .attribute-card-mat-form-field{
+    width: 15%;
+    margin-left: 10px;
+    margin-right: 100px;
+  }
+  .firstdiv{
+    height: 35%;
+  }
+  .ratedetail-tab-size{
+    height: 150%;
+  }
